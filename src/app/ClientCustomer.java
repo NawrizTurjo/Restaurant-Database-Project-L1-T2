@@ -81,14 +81,14 @@ public class ClientCustomer extends Application {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Pay Slip");
         stage.setScene(new Scene(root));
-        stage.setOnCloseRequest(e -> {
-            e.consume();
-            Alert a = new Alert(AlertType.CONFIRMATION);
-            a.setTitle("Confirmation");
-            if (a.showAndWait().get() == ButtonType.OK) {
-                stage.close();
-            }
-        });
+        // stage.setOnCloseRequest(e -> {
+        //     e.consume();
+        //     Alert a = new Alert(AlertType.CONFIRMATION);
+        //     a.setTitle("Confirmation");
+        //     if (a.showAndWait().get() == ButtonType.OK) {
+        //         stage.close();
+        //     }
+        // });
         controller.setStage(stage);
         stage.show();
     }

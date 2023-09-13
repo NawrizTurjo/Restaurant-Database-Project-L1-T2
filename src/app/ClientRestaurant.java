@@ -78,6 +78,8 @@ public class ClientRestaurant extends Application {
         loader.setLocation(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load();
 
+        // ImageView img1 = 
+
         // Loading the controller
         LoginController controller = loader.getController();
         controller.setMain(this);
@@ -100,6 +102,7 @@ public class ClientRestaurant extends Application {
         this.homeController = controller;
 
         ImageView icon = new ImageView("/assets/" + loginDTO.getRestaurant().getName() + ".png");
+        stage.getIcons().clear();
         stage.getIcons().add(icon.getImage());
 
         controller.init(loginDTO);

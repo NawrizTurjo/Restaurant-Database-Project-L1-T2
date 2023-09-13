@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -32,6 +31,5 @@
             <TableColumn fx:id="confirmButton" prefWidth="75.0" text="Confirmation" />
         </columns>
       </TableView>
-      <Button fx:id="button" layoutX="732.0" layoutY="546.0" mnemonicParsing="false" onAction="#logoutAction" text="Logout" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="51.0" />
    </children>
 </AnchorPane>

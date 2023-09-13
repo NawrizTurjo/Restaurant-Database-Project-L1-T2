@@ -59,58 +59,19 @@ public class ReadThreadServer implements Runnable {
             while (true) {
                 Object o = networkUtil.read();
                 if (o != null) {
-                    // if(o instanceof Main)
-                    // {
-                    // Main main = (Main) o;
-                    // System.out.println("Haha");
-                    // Server.setLoggedIn(main.getRestaurant().getName(), networkUtil);
-                    // }
                     if (o instanceof LoginDTO) {
                         LoginDTO loginDTO = (LoginDTO) o;
                         System.out.println("server theke pathano hoise");
                         String password = userMap.get(loginDTO.getUserName());
-                        // System.out.println(loginDTO.getUserName());
-                        // System.out.println(password);
                         loginDTO.setRestaurant(restaurantMap.get(loginDTO.getUserName()));
                         loginDTO.setStatus(loginDTO.getPassword().equals(password));
                         networkUtil.write(loginDTO);
                     }
-                    // if(o instanceof RestaurantManager)
-                    // {
-                    // networkUtil.write(main.getRestaurantManager());
-                    // }
-
-                    // if (o instanceof Food) {
-                    //     Food f = (Food) o;
-                    //     System.out.println("Food pathano hoise");
-                    //     System.out.println(f.getRestaurantName());
-                    //     System.out.println(f);
-                    //     System.out.println(Server.getHashMap().isEmpty());
-                    //     Map<String, NetworkUtil> loginInfo = Server.getHashMap();
-                    //     for (var i : loginInfo.keySet()) {
-                    //         System.out.println(i);
-                    //     }
-                    //     String ID = f.getRestaurantId() + "";
-                    //     if (loginInfo.containsKey(ID)) {
-                    //         System.out.println("Milse");
-                    //         NetworkUtil myNetworkUtil = loginInfo.get(ID);
-                    //         System.out.println(f.getRestaurantName());
-                    //         try {
-                    //             myNetworkUtil.write(f);
-                    //         } catch (IOException e) {
-                    //             // TODO Auto-generated catch block
-                    //             System.out.println("Error dise");
-                    //             e.printStackTrace();
-                    //         }
-                    //     }
-                    // }
-                    
                     else if(o instanceof FoodPassUtil)
                     {
                         FoodPassUtil f = (FoodPassUtil) o;
                         System.out.println("Food passesd");
                         System.out.println(f.getUserName());
-                        System.out.println(f.getRestaurantName());
 
                         Map<String, NetworkUtil> loginInfo = Server.getHashMapCustomer();
                         for (var i : loginInfo.keySet()) {
@@ -152,6 +113,10 @@ public class ReadThreadServer implements Runnable {
                                 System.out.println("Error dise");
                                 e.printStackTrace();
                             }
+                        }
+                        else
+                        {
+                            System.out.println("This Restaurant is offline");
                         }
                     }
 

@@ -1,5 +1,6 @@
 package controller;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,7 +78,8 @@ public class OrderCustomerSideController {
                 orderPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
                 orderTable.setItems(foodObservableList);
-                payLabel.setText("Total Payable: " + main.getPrice());
+                DecimalFormat df = new DecimalFormat("#.##");
+                payLabel.setText("Total Payable: " + df.format(main.getPrice()));
             }
         });
     }

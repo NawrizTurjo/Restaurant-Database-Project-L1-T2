@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<AnchorPane prefHeight="551.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <Label layoutX="74.0" layoutY="63.0" text="Username" />
-      <Label layoutX="74.0" layoutY="125.0" text="Password" />
-      <TextField fx:id="userText" layoutX="169.0" layoutY="58.0" />
-      <PasswordField fx:id="passwordText" layoutX="169.0" layoutY="120.0" />
-      <ButtonBar layoutX="137.0" layoutY="193.0" prefHeight="40.0" prefWidth="200.0">
+      <ImageView fitHeight="553.0" fitWidth="696.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/iconBlurred.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="74.0" layoutY="63.0" text="Restaurant ID" AnchorPane.bottomAnchor="170.0" AnchorPane.rightAnchor="272.0">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <Label layoutX="74.0" layoutY="125.0" text="Password" AnchorPane.bottomAnchor="108.0" AnchorPane.rightAnchor="276.0">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <TextField fx:id="userText" layoutX="500.0" layoutY="417.0" prefHeight="25.0" prefWidth="155.0" styleClass="text" AnchorPane.bottomAnchor="173.0" AnchorPane.rightAnchor="85.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordText" layoutX="500.0" layoutY="479.0" prefHeight="25.0" prefWidth="155.0" styleClass="text" AnchorPane.bottomAnchor="111.0" AnchorPane.rightAnchor="85.0">
+         <font>
+            <Font size="15.0" />
+         </font></PasswordField>
+      <ButtonBar layoutX="137.0" layoutY="193.0" prefHeight="44.0" prefWidth="350.0" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="63.0">
         <buttons>
-          <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetAction" text="Reset" />
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginAction" text="Login" />
+          <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetAction" prefHeight="44.0" prefWidth="114.0" text="Reset">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAction" prefHeight="46.0" text="Login">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
         </buttons>
       </ButtonBar>
    </children>

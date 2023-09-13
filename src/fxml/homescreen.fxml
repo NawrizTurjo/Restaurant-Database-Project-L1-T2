@@ -14,17 +14,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="861.0" stylesheets="@../CSS/searchPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">   <children>
       <ButtonBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" />
-      <ListView fx:id="restaurantList" layoutX="14.0" layoutY="54.0" prefHeight="493.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <ListView fx:id="restaurantList" layoutX="14.0" layoutY="54.0" prefHeight="510.0" prefWidth="200.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ListView>
-      <ListView fx:id="foodList" layoutX="633.0" layoutY="20.0" prefHeight="493.0" prefWidth="200.0">
+      <ListView fx:id="foodList" layoutX="633.0" layoutY="20.0" prefHeight="510.0" prefWidth="200.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ListView>
       <Label fx:id="searchLabel" alignment="CENTER" layoutX="218.0" layoutY="142.0" prefHeight="53.0" prefWidth="413.0" text="Search Page" textFill="#ff006f">
          <font>
-            <Font size="36.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <TextField fx:id="nameText" alignment="CENTER" layoutX="221.0" layoutY="313.0" prefHeight="39.0" prefWidth="413.0" promptText="Enter your desire" styleClass="text-field" visible="false">
@@ -37,7 +37,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Button fx:id="searchButton" layoutX="398.0" layoutY="452.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <Button fx:id="searchButton" layoutX="400.0" layoutY="498.0" mnemonicParsing="false" onAction="#search" text="Search" />
       <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="220.0" layoutY="26.0" prefHeight="53.0" prefWidth="413.0" text="Welcome">
          <font>
             <Font size="36.0" />
@@ -64,7 +64,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Button fx:id="orderButton" layoutX="540.0" layoutY="498.0" mnemonicParsing="false" onAction="#order" text="Order Now" />
+      <Button fx:id="orderButton" layoutX="489.0" layoutY="498.0" mnemonicParsing="false" onAction="#order" prefHeight="30.0" prefWidth="145.0" text="Order Now" />
       <Button fx:id="historyButton" layoutX="220.0" layoutY="498.0" mnemonicParsing="false" onAction="#history" text="VIew Order History" />
    </children>
 </AnchorPane>

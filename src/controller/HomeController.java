@@ -34,8 +34,8 @@ public class HomeController {
     @FXML
     private Label attributes;
 
-    @FXML
-    private Button button;
+    // @FXML
+    // private Button button;
 
     @FXML
     private TableColumn<Food, String> catCol;
@@ -145,14 +145,6 @@ public class HomeController {
         });
     }
 
-    @FXML
-    void logoutAction(ActionEvent event) {
-        try {
-            main.showLoginPage();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public void setMain(ClientRestaurant main) {
         this.main = main;

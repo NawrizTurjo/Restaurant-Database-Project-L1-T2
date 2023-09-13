@@ -19,7 +19,7 @@ public class Server {
     public HashMap<String, String> userMap;
     public List<Restaurant> restaurantList;
     public List<Food> foodList;
-    RestaurantManager restaurantManager;
+    public RestaurantManager restaurantManager;
     Map<String, Restaurant> restaurantMap;
     public static Map<String, NetworkUtil> loggedIn;
 
