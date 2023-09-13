@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DifferentRestaurantFoodController">
+   <children>
+      <ListView fx:id="listView" layoutX="38.0" layoutY="45.0" maxWidth="1000.0" prefHeight="564.0" prefWidth="362.0" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="45.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.2368421107530594" green="0.13486842811107635" blue="0.13486842811107635" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ListView>
+      <Button fx:id="closeButton" layoutX="505.0" layoutY="649.0" mnemonicParsing="false" onAction="#close" text="Close" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="50.0" />
+   </children>
+</AnchorPane>
