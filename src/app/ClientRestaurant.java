@@ -60,16 +60,24 @@ public class ClientRestaurant extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
-        connectToServer();
-        showLoginPage();
+        if (connectToServer()) {
+            showLoginPage();
+        } else
+            showAlert();
     }
 
-    private void connectToServer() throws IOException {
-        String serverAddress = "127.0.0.1";
-        int serverPort = 33333;
-        networkUtil = new NetworkUtil(serverAddress, serverPort);
-        networkUtil.write(false);
-        new ReadThreadRestaurant(this);
+    private boolean connectToServer() throws IOException {
+        try {
+            String serverAddress = "127.0.0.1";
+            int serverPort = 33333;
+            networkUtil = new NetworkUtil(serverAddress, serverPort);
+            networkUtil.write(false);
+            new ReadThreadRestaurant(this);
+            return true;
+        } catch (Exception e) {
+            // showAlert();
+            return false;
+        }
     }
 
     public void showLoginPage() throws Exception {
@@ -78,7 +86,7 @@ public class ClientRestaurant extends Application {
         loader.setLocation(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load();
 
-        // ImageView img1 = 
+        // ImageView img1 =
 
         // Loading the controller
         LoginController controller = loader.getController();
@@ -118,9 +126,9 @@ public class ClientRestaurant extends Application {
 
     public void showAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Incorrect Credentials");
-        alert.setHeaderText("Incorrect Credentials");
-        alert.setContentText("The username and password you provided is not correct.");
+        alert.setTitle("Server Error");
+        alert.setHeaderText("Server Error");
+        alert.setContentText("Server is not running.");
         alert.showAndWait();
     }
 

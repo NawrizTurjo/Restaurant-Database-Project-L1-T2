@@ -1,4 +1,5 @@
 package app;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,6 @@ import resources.Food;
 import resources.RestaurantManager;
 import utlilities.NetworkUtil;
 
-
 public class ClientCustomer extends Application {
 
     private Stage stage;
@@ -34,7 +34,7 @@ public class ClientCustomer extends Application {
     public static RestaurantManager restaurantManager;
     public OrderCustomerSideController orderCustomerSideController;
     public String userName;
-    
+
     public List<Food> OrederdFoodItems = new ArrayList<>();
     double price = 0;
     // public boolean isServer = false;
@@ -43,13 +43,12 @@ public class ClientCustomer extends Application {
         return stage;
     }
 
-    public String getUsername()
-    {
+    public String getUsername() {
         return this.userName;
     }
 
     // public void setServer(boolean isServer) {
-    //     this.isServer = isServer;
+    // this.isServer = isServer;
     // }
 
     public NetworkUtil getNetworkUtil() {
@@ -62,13 +61,12 @@ public class ClientCustomer extends Application {
         price += food.getPrice();
         OrederdFoodItems.add(food);
         System.out.println("List Updated with " + food);
-        if(orderCustomerSideController!=null)
-        {
+        if (orderCustomerSideController != null) {
             orderCustomerSideController.updateFoodOrderList(food);
         }
-        
+
     }
-    
+
     public void displayCustomerSideOrder(List<Food> foodList) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ordercustomerside.fxml"));
         Parent root = loader.load();
@@ -82,46 +80,45 @@ public class ClientCustomer extends Application {
         stage.setTitle("Pay Slip");
         stage.setScene(new Scene(root));
         // stage.setOnCloseRequest(e -> {
-        //     e.consume();
-        //     Alert a = new Alert(AlertType.CONFIRMATION);
-        //     a.setTitle("Confirmation");
-        //     if (a.showAndWait().get() == ButtonType.OK) {
-        //         stage.close();
-        //     }
+        // e.consume();
+        // Alert a = new Alert(AlertType.CONFIRMATION);
+        // a.setTitle("Confirmation");
+        // if (a.showAndWait().get() == ButtonType.OK) {
+        // stage.close();
+        // }
         // });
         controller.setStage(stage);
         stage.show();
     }
 
-    public double getPrice()
-    {
+    public double getPrice() {
         return this.price;
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
-        try {
-            connectToServer();
+        if (connectToServer()) {
             showCustomerLogin();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            showAlert();
         }
     }
 
-    private void connectToServer() throws IOException {
+    private boolean connectToServer() throws IOException {
         try {
             String serverAddress = "127.0.0.1";
             int serverPort = 33333;
             networkUtil = new NetworkUtil(serverAddress, serverPort);
             networkUtil.write(true);
             new ReadThreadCustomer(this);
+            return true;
         } catch (Exception e) {
-            showAlert();
+            return false;
         }
     }
 
-    public void showCustomerLogin() throws IOException{
+    public void showCustomerLogin() throws IOException {
         // XML Loading using FXMLLoader
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/customerwelcome.fxml"));
@@ -143,22 +140,20 @@ public class ClientCustomer extends Application {
         // System.out.println("In customerloginPage: "+Server.loggedIn.isEmpty());
     }
 
-    
-
     // public void showLoginPage() throws Exception {
-    //     // XML Loading using FXMLLoader
-    //     FXMLLoader loader = new FXMLLoader();
-    //     loader.setLocation(getClass().getResource("/fxml/login.fxml"));
-    //     Parent root = loader.load();
+    // // XML Loading using FXMLLoader
+    // FXMLLoader loader = new FXMLLoader();
+    // loader.setLocation(getClass().getResource("/fxml/login.fxml"));
+    // Parent root = loader.load();
 
-    //     // Loading the controller
-    //     LoginController controller = loader.getController();
-    //     controller.setMain(this);
+    // // Loading the controller
+    // LoginController controller = loader.getController();
+    // controller.setMain(this);
 
-    //     // Set the primary stage
-    //     stage.setTitle("Login");
-    //     stage.setScene(new Scene(root, 400, 250));
-    //     stage.show();
+    // // Set the primary stage
+    // stage.setTitle("Login");
+    // stage.setScene(new Scene(root, 400, 250));
+    // stage.show();
     // }
 
     public void showOrderPage(String userName) throws Exception {
@@ -187,22 +182,25 @@ public class ClientCustomer extends Application {
         // Loading the controller
         // homeScreenController controller = loader.getController();
         // controller.init(userName);
-        
+
         // Set the primary stage
         // Stage primaryStage = new Stage();
         // primaryStage.setTitle("Search");
         // primaryStage.setScene(new Scene(root));
         // primaryStage.show();
-        
-        // FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("homescreen.fxml"));
+
+        // FXMLLoader fxmlLoader = new
+        // FXMLLoader(App.class.getResource("homescreen.fxml"));
         // Parent parent = fxmlLoader.load();
-        
+
         HomeScreenController controller = loader.getController();
         controller.setWelcomeLabel(userName);
         controller.setMain(this);
 
         Stage popUpStage = new Stage();
         popUpStage.setTitle("Search Page");
+        ImageView icon = new ImageView("/assets/search.jpg");
+        popUpStage.getIcons().add(icon.getImage());
         popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.setScene(new Scene(root));
         popUpStage.showAndWait();
@@ -210,9 +208,9 @@ public class ClientCustomer extends Application {
 
     public void showAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Incorrect Credentials");
-        alert.setHeaderText("Incorrect Credentials");
-        alert.setContentText("The username and password you provided is not correct.");
+        alert.setTitle("Server Error");
+        alert.setHeaderText("Server Error");
+        alert.setContentText("Server is not running.");
         alert.showAndWait();
     }
 
