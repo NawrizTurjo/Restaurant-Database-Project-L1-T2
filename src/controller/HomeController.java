@@ -65,6 +65,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -72,9 +73,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import resources.Food;
 import resources.Restaurant;
+import utlilities.FoodUtilObject;
 import utlilities.LoginDTO;
 
-public class HomeController{
+public class HomeController {
 
     private ClientRestaurant main;
     private ClientCustomer app;
@@ -99,19 +101,25 @@ public class HomeController{
     private TableColumn<Food, String> nameCol;
 
     @FXML
-    private TableColumn<Food, String> orderCol;
+    private TableColumn<FoodUtilObject, String> orderCol;
 
     @FXML
-    private TableColumn<Food, String> orderName;
+    private TableColumn<FoodUtilObject, String> orderName;
 
     @FXML
-    private TableColumn<Food, Double> orderPrice;
+    private TableColumn<FoodUtilObject, Double> orderPrice;
 
     @FXML
-    private TableView<Food> orderTable;
+    private TableView<FoodUtilObject> orderTable;
 
     @FXML
     private TableColumn<Food, Double> priceCol;
+
+    @FXML
+    private TableColumn<FoodUtilObject, Button> confirmButton;
+
+    @FXML
+    private TableColumn<FoodUtilObject, String> customerName;
 
     @FXML
     private ImageView logo;
@@ -123,7 +131,7 @@ public class HomeController{
         System.out.println(Data);
         attributes.setText(Data);
 
-        logo.setImage(new Image("/assets/"+r.getName()+".png"));
+        logo.setImage(new Image("/assets/" + r.getName() + ".png"));
 
         ObservableList<Food> foodList = FXCollections.observableArrayList(r.getMenu());
         nameCol.setCellValueFactory(new PropertyValueFactory<>("FoodName"));
@@ -134,23 +142,46 @@ public class HomeController{
 
         this.loginDTO = loginDTO;
     }
-    List<Food> foods = new ArrayList<>();
-    public void updateOrder(Food f) {
-    Platform.runLater(new Runnable() {
-        @Override
-        public void run() {
-            foods.add(f);
 
-            ObservableList<Food> foodList = FXCollections.observableArrayList(foods);
-            orderName.setCellValueFactory(new PropertyValueFactory<>("FoodName"));
-            orderCol.setCellValueFactory(new PropertyValueFactory<>("category"));
-            orderPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+    List<FoodUtilObject> foods = new ArrayList<>();
 
-            orderTable.setItems(foodList);
-        }
-    });
-}
+    public void updateOrder(FoodUtilObject f) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                foods.add(f);
 
+                ObservableList<FoodUtilObject> foodList = FXCollections.observableArrayList(foods);
+                orderName.setCellValueFactory(new PropertyValueFactory<>("FoodName"));
+                orderCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+                orderPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+                customerName.setCellValueFactory(new PropertyValueFactory<>("userName"));
+                confirmButton.setCellFactory(column -> {
+                    return new TableCell<>() {
+                        final Button confirmButton = new Button("Confirm");
+                        {
+                            confirmButton.setOnAction(event -> {
+                                FoodUtilObject item = getTableView().getItems().get(getIndex());
+                                foods.remove(item);
+                                orderTable.getItems().remove(item);
+                            });
+                        }
+
+                        @Override
+                        protected void updateItem(Button item, boolean empty) {
+                            super.updateItem(item, empty);
+                            if (empty) {
+                                setGraphic(null);
+                            } else {
+                                setGraphic(confirmButton);
+                            }
+                        }
+                    };
+                });
+                orderTable.setItems(foodList);
+            }
+        });
+    }
 
     @FXML
     void logoutAction(ActionEvent event) {
@@ -168,10 +199,4 @@ public class HomeController{
     void setMain(ClientCustomer app) {
         this.app = app;
     }
-
-    // @Override
-    // public void initialize(URL location, ResourceBundle resources) {
-    //     // TODO Auto-generated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'initialize'");
-    // }
 }

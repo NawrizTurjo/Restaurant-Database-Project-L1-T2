@@ -1,6 +1,8 @@
 package app;
 import java.io.IOException;
 
+import javax.print.DocFlavor.STRING;
+
 import controller.CustomerWelcomeController;
 import controller.HomeScreenController;
 import controller.LoginController;
@@ -23,10 +25,16 @@ public class ClientCustomer extends Application {
     private Stage stage;
     private NetworkUtil networkUtil;
     public static RestaurantManager restaurantManager;
+    public String userName;
     // public boolean isServer = false;
 
     public Stage getStage() {
         return stage;
+    }
+
+    public String getUsername()
+    {
+        return this.userName;
     }
 
     // public void setServer(boolean isServer) {
@@ -82,21 +90,21 @@ public class ClientCustomer extends Application {
         // System.out.println("In customerloginPage: "+Server.loggedIn.isEmpty());
     }
 
-    public void showLoginPage() throws Exception {
-        // XML Loading using FXMLLoader
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/login.fxml"));
-        Parent root = loader.load();
+    // public void showLoginPage() throws Exception {
+    //     // XML Loading using FXMLLoader
+    //     FXMLLoader loader = new FXMLLoader();
+    //     loader.setLocation(getClass().getResource("/fxml/login.fxml"));
+    //     Parent root = loader.load();
 
-        // Loading the controller
-        LoginController controller = loader.getController();
-        controller.setMain(this);
+    //     // Loading the controller
+    //     LoginController controller = loader.getController();
+    //     controller.setMain(this);
 
-        // Set the primary stage
-        stage.setTitle("Login");
-        stage.setScene(new Scene(root, 400, 250));
-        stage.show();
-    }
+    //     // Set the primary stage
+    //     stage.setTitle("Login");
+    //     stage.setScene(new Scene(root, 400, 250));
+    //     stage.show();
+    // }
 
     public void showOrderPage(String userName) throws Exception {
 

@@ -8,6 +8,7 @@ import java.util.Map;
 import javafx.application.Platform;
 import resources.Food;
 import resources.Restaurant;
+import utlilities.FoodUtil;
 import utlilities.LoginDTO;
 import utlilities.NetworkUtil;
 
@@ -40,15 +41,16 @@ public class ReadThreadServer implements Runnable {
         this.thr = new Thread(this);
         thr.start();
     }
-    // public ReadThreadServer(HashMap<String, String> map, Map<String, Restaurant> restaurantMap,
-    //         NetworkUtil networkUtil,Map<String,NetworkUtil> loggedIn) {
-    //     this.userMap = map;
-    //     this.networkUtil = networkUtil;
-    //     this.restaurantMap = restaurantMap;
-    //     this.loggedIn = loggedIn;
-    //     // this.server = server;
-    //     this.thr = new Thread(this);
-    //     thr.start();
+    // public ReadThreadServer(HashMap<String, String> map, Map<String, Restaurant>
+    // restaurantMap,
+    // NetworkUtil networkUtil,Map<String,NetworkUtil> loggedIn) {
+    // this.userMap = map;
+    // this.networkUtil = networkUtil;
+    // this.restaurantMap = restaurantMap;
+    // this.loggedIn = loggedIn;
+    // // this.server = server;
+    // this.thr = new Thread(this);
+    // thr.start();
     // }
 
     public void run() {
@@ -76,45 +78,56 @@ public class ReadThreadServer implements Runnable {
                     // {
                     // networkUtil.write(main.getRestaurantManager());
                     // }
-                    if (o instanceof Food) {
-                        Food f = (Food) o;
+
+                    // if (o instanceof Food) {
+                    //     Food f = (Food) o;
+                    //     System.out.println("Food pathano hoise");
+                    //     System.out.println(f.getRestaurantName());
+                    //     System.out.println(f);
+                    //     System.out.println(Server.getHashMap().isEmpty());
+                    //     Map<String, NetworkUtil> loginInfo = Server.getHashMap();
+                    //     for (var i : loginInfo.keySet()) {
+                    //         System.out.println(i);
+                    //     }
+                    //     String ID = f.getRestaurantId() + "";
+                    //     if (loginInfo.containsKey(ID)) {
+                    //         System.out.println("Milse");
+                    //         NetworkUtil myNetworkUtil = loginInfo.get(ID);
+                    //         System.out.println(f.getRestaurantName());
+                    //         try {
+                    //             myNetworkUtil.write(f);
+                    //         } catch (IOException e) {
+                    //             // TODO Auto-generated catch block
+                    //             System.out.println("Error dise");
+                    //             e.printStackTrace();
+                    //         }
+                    //     }
+                    // }
+
+                    if (o instanceof FoodUtil) {
+                        FoodUtil f = (FoodUtil) o;
                         System.out.println("Food pathano hoise");
                         System.out.println(f.getRestaurantName());
                         System.out.println(f);
-                        // Platform.runLater(new Runnable() {
-                        //     @Override
-                        //     public void run() {
-                                System.out.println(Server.getHashMap().isEmpty());
-                                Map<String, NetworkUtil> loginInfo = Server.getHashMap();
-                                for (var i : loginInfo.keySet()) {
-                                    System.out.println(i);
-                                }
-                                String ID = f.getRestaurantId()+"";
-                                if (loginInfo.containsKey(ID)) {
-                                    System.out.println("Milse");
-                                    NetworkUtil myNetworkUtil = loginInfo.get(ID);
-                                    System.out.println(f.getRestaurantName());
-                                    try {
-                                        myNetworkUtil.write(f);
-                                    } catch (IOException e) {
-                                        // TODO Auto-generated catch block
-                                        System.out.println("Error dise");
-                                        e.printStackTrace();
-                                    }
-                                }
-                        //     }
-                        // });
-                        // System.out.println(Server.loggedIn.isEmpty());
-                        // for(var i:Server.loggedIn.keySet())
-                        // {
-                        // System.out.println(i);
-                        // }
-                        // if(Server.loggedIn.containsKey(f.getRestaurantName()))
-                        // {
-                        // System.out.println("Milse");
-                        // NetworkUtil myNetworkUtil = Server.loggedIn.get(f.getRestaurantName());
-                        // myNetworkUtil.write(f);
-                        // }
+                        System.out.println(Server.getHashMap().isEmpty());
+                        Map<String, NetworkUtil> loginInfo = Server.getHashMap();
+                        for (var i : loginInfo.keySet()) {
+                            System.out.println(i);
+                        }
+                        String ID = f.getRestaurantId() + "";
+                        System.out.println(ID);
+                        if (loginInfo.containsKey(ID)) {
+                            System.out.println("Milse");
+                            NetworkUtil myNetworkUtil = loginInfo.get(ID);
+                            // System.out.println(f.getRestaurantName());
+                            try {
+                                myNetworkUtil.write(f);
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                System.out.println("Error dise");
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 }
             }

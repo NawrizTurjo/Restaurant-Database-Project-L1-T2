@@ -16,18 +16,20 @@
             <Font size="28.0" />
          </font>  
       </Label>
-      <TableView fx:id="menuTable" layoutX="453.0" prefHeight="728.0" prefWidth="540.0">
+      <TableView fx:id="menuTable" layoutX="462.0" prefHeight="728.0" prefWidth="530.0">
         <columns>
           <TableColumn fx:id="nameCol" prefWidth="208.0" text="Food Name" />
-          <TableColumn fx:id="catCol" prefWidth="204.0" text="Category" />
-            <TableColumn fx:id="priceCol" prefWidth="126.0" text="Price" />
+          <TableColumn fx:id="catCol" prefWidth="208.0" text="Category" />
+            <TableColumn fx:id="priceCol" prefWidth="122.0" text="Price" />
         </columns>
       </TableView>
-      <TableView fx:id="orderTable" layoutX="-5.0" layoutY="278.0" prefHeight="448.0" prefWidth="457.0">
+      <TableView fx:id="orderTable" layoutX="3.0" layoutY="278.0" prefHeight="448.0" prefWidth="449.0">
         <columns>
-          <TableColumn fx:id="orderName" prefWidth="148.0" text="Food Name" />
-          <TableColumn fx:id="orderCol" prefWidth="198.0" text="Category" />
-            <TableColumn fx:id="orderPrice" prefWidth="110.0" text="Price" />
+          <TableColumn fx:id="orderName" prefWidth="142.0" text="Food Name" />
+          <TableColumn fx:id="orderCol" prefWidth="85.0" text="Category" />
+            <TableColumn fx:id="orderPrice" prefWidth="66.0" text="Price" />
+            <TableColumn fx:id="customerName" prefWidth="90.0" text="Ordered By" />
+            <TableColumn fx:id="confirmButton" prefWidth="75.0" text="Confirmation" />
         </columns>
       </TableView>
       <Button fx:id="button" layoutX="732.0" layoutY="546.0" mnemonicParsing="false" onAction="#logoutAction" text="Logout" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="51.0" />

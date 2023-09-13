@@ -30,6 +30,7 @@ public class CustomerWelcomeController {
     @FXML
     void nextPage(ActionEvent event) throws Exception {
         String name = nameCustomer.getText();
+        main.userName = name;
         System.out.println(name);
         main.showHomePage(name);
         //close this stage

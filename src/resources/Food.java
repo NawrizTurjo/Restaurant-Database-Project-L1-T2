@@ -2,6 +2,9 @@ package resources;
 import java.io.Serializable;
 
 public class Food implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
     int restaurantId;
     String category;
     String foodName;
@@ -20,6 +23,14 @@ public class Food implements Serializable{
         this.category = category;
         this.foodName = foodName;
         this.price = price;
+    }
+
+    public Food(Food food)
+    {
+        this.restaurantId = food.getRestaurantId();
+        this.category = food.getCategory();
+        this.foodName = food.getFoodName();
+        this.price = food.getPrice();
     }
 
     public void setRestaurantName(String restaurantName) {

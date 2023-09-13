@@ -4,6 +4,8 @@ package network;
 import javafx.application.Platform;
 import resources.Food;
 import resources.RestaurantManager;
+import utlilities.FoodUtil;
+import utlilities.FoodUtilObject;
 import utlilities.LoginDTO;
 
 import java.io.IOException;
@@ -104,12 +106,24 @@ public class ReadThreadRestaurant implements Runnable {
                                 }
                             });
                         }
-                        if (r instanceof Food) {
-                            Food f = (Food) r;
+                        // if (r instanceof Food) {
+                        //     Food f = (Food) r;
+                        //     System.out.println("Nice");
+                        //     if(mainR.getRestaurant().getId()==f.getRestaurantId())
+                        //     {
+                        //         mainR.homeController.updateOrder(f);
+                        //         System.out.println("Is Calling...(ig)");
+                        //     }
+                            
+                        // }
+
+                        if (r instanceof FoodUtil) {
+                            FoodUtil f = (FoodUtil) r;
                             System.out.println("Nice");
-                            if(mainR.getRestaurant().getId()==f.getRestaurantId())
+                            FoodUtilObject F = new FoodUtilObject(f);
+                            if(mainR.getRestaurant().getId()==F.getRestaurantId())
                             {
-                                mainR.homeController.updateOrder(f);
+                                mainR.homeController.updateOrder(F);
                                 System.out.println("Is Calling...(ig)");
                             }
                             

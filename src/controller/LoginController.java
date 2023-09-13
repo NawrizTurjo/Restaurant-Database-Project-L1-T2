@@ -14,7 +14,7 @@ import utlilities.LoginDTO;
 public class LoginController {
 
     private ClientRestaurant main;
-    private ClientCustomer app;
+    // private ClientCustomer app;
     
 
     @FXML
@@ -69,9 +69,9 @@ public class LoginController {
         passwordText.setText(null);
     }
 
-    public void setMain(ClientCustomer app) {
-        this.app = app;
-    }
+    // public void setMain(ClientCustomer app) {
+    //     this.app = app;
+    // }
 
     public void setMain(ClientRestaurant main) {
         this.main = main;
