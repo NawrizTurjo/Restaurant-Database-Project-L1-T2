@@ -16,6 +16,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -32,6 +34,7 @@ public class ClientCustomer extends Application {
     public static RestaurantManager restaurantManager;
     public OrderCustomerSideController orderCustomerSideController;
     public String userName;
+    
     public List<Food> OrederdFoodItems = new ArrayList<>();
     double price = 0;
     // public boolean isServer = false;
@@ -59,8 +62,36 @@ public class ClientCustomer extends Application {
         price += food.getPrice();
         OrederdFoodItems.add(food);
         System.out.println("List Updated with " + food);
+        if(orderCustomerSideController!=null)
+        {
+            orderCustomerSideController.updateFoodOrderList(food);
+        }
+        
     }
     
+    public void displayCustomerSideOrder(List<Food> foodList) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ordercustomerside.fxml"));
+        Parent root = loader.load();
+        OrderCustomerSideController controller = loader.getController();
+        this.orderCustomerSideController = controller;
+        controller.setMain(this);
+        controller.init(foodList);
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Pay Slip");
+        stage.setScene(new Scene(root));
+        stage.setOnCloseRequest(e -> {
+            e.consume();
+            Alert a = new Alert(AlertType.CONFIRMATION);
+            a.setTitle("Confirmation");
+            if (a.showAndWait().get() == ButtonType.OK) {
+                stage.close();
+            }
+        });
+        controller.setStage(stage);
+        stage.show();
+    }
 
     public double getPrice()
     {

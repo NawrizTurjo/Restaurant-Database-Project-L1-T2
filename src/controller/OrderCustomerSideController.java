@@ -86,7 +86,6 @@ public class OrderCustomerSideController {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                foodList.clear();
                 foodList.addAll(foods);
                 // ObservableList<Food> foodObservableList = FXCollections.observableArrayList(main.getFoodList());
 

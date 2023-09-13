@@ -69,7 +69,7 @@ public class HomeScreenController implements Initializable {
 
     @FXML
     void history(ActionEvent event) throws IOException {
-        displayCustomerSideOrder(main.getFoodList());
+        main.displayCustomerSideOrder(main.getFoodList());
     }
 
     
@@ -384,27 +384,6 @@ public class HomeScreenController implements Initializable {
         this.stage = stage;
     }
 
-    private void displayCustomerSideOrder(List<Food> foodList) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ordercustomerside.fxml"));
-        Parent root = loader.load();
-        OrderCustomerSideController controller = loader.getController();
-        controller.setMain(main);
-        controller.init(foodList);
-
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Pay Slip");
-        stage.setScene(new Scene(root));
-        stage.setOnCloseRequest(e -> {
-            e.consume();
-            Alert a = new Alert(AlertType.CONFIRMATION);
-            a.setTitle("Confirmation");
-            if (a.showAndWait().get() == ButtonType.OK) {
-                stage.close();
-            }
-        });
-        controller.setStage(stage);
-        stage.show();
-    }
+    
 
 }
