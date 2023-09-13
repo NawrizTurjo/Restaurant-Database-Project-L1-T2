@@ -13,7 +13,7 @@ import resources.RestaurantManager;
 import utlilities.LoginDTO;
 import utlilities.NetworkUtil;
 
-public class Server {
+public class Server{
 
     private ServerSocket serverSocket;
     public HashMap<String, String> userMap;
@@ -123,4 +123,5 @@ public class Server {
     public static void main(String[] args) {
         new Server();
     }
+
 }

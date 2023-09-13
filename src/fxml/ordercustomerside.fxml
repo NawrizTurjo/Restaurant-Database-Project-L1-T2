@@ -4,12 +4,41 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderCustomerSideController">
    <children>
-      <Label fx:id="payLabel" layoutX="823.0" prefHeight="369.0" prefWidth="279.0" text="Label" />
+      <ImageView fitHeight="532.0" fitWidth="1102.0" layoutX="-3.0" layoutY="-1.0" opacity="0.75" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/bill2.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="payLabel" alignment="BOTTOM_LEFT" layoutX="739.0" layoutY="66.0" prefHeight="369.0" prefWidth="365.0" text="Label">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7631579041481018" green="0.1731237769126892" blue="0.1731237769126892" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.20509259402751923" green="0.06481481343507767" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
       <TableView fx:id="orderTable" layoutX="8.0" layoutY="6.0" prefHeight="524.0" prefWidth="732.0">
         <columns>
           <TableColumn fx:id="orderRestaurant" prefWidth="157.0" text="Restaurant Name" />
@@ -19,5 +48,10 @@
         </columns>
       </TableView>
       <Button fx:id="backButton" layoutX="1036.0" layoutY="493.0" mnemonicParsing="false" onAction="#back" text="BACK" />
+      <ImageView fitHeight="302.0" fitWidth="200.0" layoutX="817.0" layoutY="26.0" opacity="0.84" pickOnBounds="true" rotate="45.0">
+         <image>
+            <Image url="@../assets/bill.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

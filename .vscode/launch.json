@@ -9,7 +9,8 @@
             "name": "Server",
             "request": "launch",
             "mainClass": "network.Server",
-            "projectName": "Restaurant-database-main-package-main_92c2da51"
+            "projectName": "Restaurant-database-main-package-main_92c2da51",
+            "vmArgs": "--module-path G:\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",

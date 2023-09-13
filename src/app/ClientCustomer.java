@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -162,15 +163,16 @@ public class ClientCustomer extends Application {
         loader.setLocation(getClass().getResource("/fxml/orderfood.fxml"));
         Parent root = loader.load();
 
-        // Loading the controller
         OrderFoodController controller = loader.getController();
         controller.setMain(this);
 
-        // Set the primary stage
-        stage.setTitle("Order Page");
-        // System.out.println("In orderPage: "+Server.loggedIn.isEmpty());
-        stage.setScene(new Scene(root));
-        stage.show();
+        Stage popUpStage = new Stage();
+        popUpStage.setTitle("Order Page");
+        popUpStage.initModality(Modality.APPLICATION_MODAL);
+        popUpStage.setScene(new Scene(root));
+        Image icon = new Image(getClass().getResourceAsStream("/assets/order.jpg"));
+        popUpStage.getIcons().add(icon);
+        popUpStage.showAndWait();
     }
 
     public void showHomePage(String userName) throws Exception {
@@ -179,30 +181,16 @@ public class ClientCustomer extends Application {
         loader.setLocation(getClass().getResource("/fxml/homescreen.fxml"));
         Parent root = loader.load();
 
-        // Loading the controller
-        // homeScreenController controller = loader.getController();
-        // controller.init(userName);
-
-        // Set the primary stage
-        // Stage primaryStage = new Stage();
-        // primaryStage.setTitle("Search");
-        // primaryStage.setScene(new Scene(root));
-        // primaryStage.show();
-
-        // FXMLLoader fxmlLoader = new
-        // FXMLLoader(App.class.getResource("homescreen.fxml"));
-        // Parent parent = fxmlLoader.load();
-
         HomeScreenController controller = loader.getController();
         controller.setWelcomeLabel(userName);
         controller.setMain(this);
 
         Stage popUpStage = new Stage();
         popUpStage.setTitle("Search Page");
-        ImageView icon = new ImageView("/assets/search.jpg");
-        popUpStage.getIcons().add(icon.getImage());
         popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.setScene(new Scene(root));
+        Image icon = new Image(getClass().getResourceAsStream("/assets/search.jpg"));
+        popUpStage.getIcons().add(icon);
         popUpStage.showAndWait();
     }
 

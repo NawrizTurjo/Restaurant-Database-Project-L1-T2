@@ -9,6 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.ListCell;
@@ -64,6 +65,8 @@ public class OrderFoodController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // ImageView icon = new ImageView("/assets/icon.jpg");
+        // stage.getIcons().add(icon.getImage());
         listView.setItems(items);
         placedOrder.setItems(orderedItems);
 
