@@ -86,8 +86,6 @@ public class ClientRestaurant extends Application {
         loader.setLocation(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load();
 
-        // ImageView img1 =
-
         // Loading the controller
         LoginController controller = loader.getController();
         controller.setMain(this);
@@ -120,8 +118,6 @@ public class ClientRestaurant extends Application {
         stage.setTitle("Home");
         stage.setScene(new Scene(root));
         stage.show();
-        // System.out.println("In homePage: "+Server.loggedIn.isEmpty()+"as restaurant
-        // is added");
     }
 
     public void showAlert() {

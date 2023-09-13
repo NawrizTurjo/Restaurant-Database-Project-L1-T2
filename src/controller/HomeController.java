@@ -71,6 +71,9 @@ public class HomeController {
     private TableColumn<FoodUtilObject, String> customerName;
 
     @FXML
+    private ImageView offer;
+
+    @FXML
     private ImageView logo;
 
     public void init(LoginDTO loginDTO) {
@@ -81,6 +84,7 @@ public class HomeController {
         attributes.setText(Data);
 
         logo.setImage(new Image("/assets/" + r.getName() + ".png"));
+        offer.setImage(new Image("/assets/" + r.getName() + "offer.jpg"));
 
         ObservableList<Food> foodList = FXCollections.observableArrayList(r.getMenu());
         nameCol.setCellValueFactory(new PropertyValueFactory<>("FoodName"));

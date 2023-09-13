@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1217.0" stylesheets="@../CSS/restaurantUi.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerRestaurantController">
    <children>
-      <TableView fx:id="tableView" editable="false" layoutX="-3.0" layoutY="-3.0" prefHeight="923.0" prefWidth="1217.0" styleClass="searchTable" stylesheets="@../CSS/tableRestaurantSearch.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <TableView fx:id="tableView" editable="false" layoutX="-3.0" layoutY="-3.0" opacity="0.8" prefHeight="923.0" prefWidth="1217.0" styleClass="searchTable" stylesheets="@../CSS/tableRestaurantSearch.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <columns>
             <TableColumn fx:id="idColumn" maxWidth="500.0" minWidth="50.0" prefWidth="50.0" text="ID" />
             <TableColumn fx:id="nameColumn" maxWidth="200.0" minWidth="100.0" prefWidth="104.0" text="Restaurant Name" />

@@ -9,20 +9,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
-      <ImageView fx:id="logo" fitHeight="281.0" fitWidth="457.0" layoutX="1.0" layoutY="-2.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="offer" fitHeight="728.0" fitWidth="993.0" layoutX="-1.0" opacity="0.4" pickOnBounds="true" />
+      <ImageView fx:id="logo" fitHeight="281.0" fitWidth="457.0" layoutX="1.0" layoutY="-2.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="attributes" alignment="CENTER" layoutX="-1.0" layoutY="-6.0" prefHeight="289.0" prefWidth="457.0" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="537.0" AnchorPane.topAnchor="-6.0">
          <font>
             <Font size="28.0" />
          </font>  
       </Label>
-      <TableView fx:id="menuTable" layoutX="462.0" prefHeight="728.0" prefWidth="530.0">
+      <TableView fx:id="menuTable" layoutX="462.0" opacity="0.75" prefHeight="728.0" prefWidth="530.0">
         <columns>
           <TableColumn fx:id="nameCol" prefWidth="208.0" text="Food Name" />
           <TableColumn fx:id="catCol" prefWidth="208.0" text="Category" />
             <TableColumn fx:id="priceCol" prefWidth="122.0" text="Price" />
         </columns>
       </TableView>
-      <TableView fx:id="orderTable" layoutX="3.0" layoutY="278.0" prefHeight="448.0" prefWidth="449.0">
+      <TableView fx:id="orderTable" layoutX="3.0" layoutY="278.0" opacity="0.75" prefHeight="448.0" prefWidth="463.0">
         <columns>
           <TableColumn fx:id="orderName" prefWidth="142.0" text="Food Name" />
           <TableColumn fx:id="orderCol" prefWidth="85.0" text="Category" />

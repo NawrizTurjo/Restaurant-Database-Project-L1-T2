@@ -4,21 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.print.DocFlavor.STRING;
-
 import controller.CustomerWelcomeController;
 import controller.HomeScreenController;
-import controller.LoginController;
 import controller.OrderCustomerSideController;
 import controller.OrderFoodController;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -38,7 +32,6 @@ public class ClientCustomer extends Application {
 
     public List<Food> OrederdFoodItems = new ArrayList<>();
     double price = 0;
-    // public boolean isServer = false;
 
     public Stage getStage() {
         return stage;
@@ -47,10 +40,6 @@ public class ClientCustomer extends Application {
     public String getUsername() {
         return this.userName;
     }
-
-    // public void setServer(boolean isServer) {
-    // this.isServer = isServer;
-    // }
 
     public NetworkUtil getNetworkUtil() {
         return networkUtil;
@@ -80,14 +69,6 @@ public class ClientCustomer extends Application {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Pay Slip");
         stage.setScene(new Scene(root));
-        // stage.setOnCloseRequest(e -> {
-        // e.consume();
-        // Alert a = new Alert(AlertType.CONFIRMATION);
-        // a.setTitle("Confirmation");
-        // if (a.showAndWait().get() == ButtonType.OK) {
-        // stage.close();
-        // }
-        // });
         controller.setStage(stage);
         stage.show();
     }
@@ -138,24 +119,7 @@ public class ClientCustomer extends Application {
         stage.setResizable(false);
         controller.setStage(stage);
         stage.show();
-        // System.out.println("In customerloginPage: "+Server.loggedIn.isEmpty());
     }
-
-    // public void showLoginPage() throws Exception {
-    // // XML Loading using FXMLLoader
-    // FXMLLoader loader = new FXMLLoader();
-    // loader.setLocation(getClass().getResource("/fxml/login.fxml"));
-    // Parent root = loader.load();
-
-    // // Loading the controller
-    // LoginController controller = loader.getController();
-    // controller.setMain(this);
-
-    // // Set the primary stage
-    // stage.setTitle("Login");
-    // stage.setScene(new Scene(root, 400, 250));
-    // stage.show();
-    // }
 
     public void showOrderPage(String userName) throws Exception {
 
@@ -201,26 +165,13 @@ public class ClientCustomer extends Application {
         alert.setContentText("Server is not running.");
         alert.showAndWait();
     }
-
-    // public void setRestaurantManager(RestaurantManager restaurantManager) {
-    // this.restaurantManager = restaurantManager;
-    // }
-
-    public static void main(String[] args) {
-        // This will launch the JavaFX application
-        // FileOp fileReader = new FileOp();
-        // List<Restaurant> r = fileReader.fileRestaurant();
-        // List<Food> F = fileReader.fileFood();
-        // for (var i : r) {
-        // restaurantManager.addRestaurant(i);
-        // }
-        // for (var i : F) {
-        // restaurantManager.addFood(i);
-        // }
-        launch(args);
-    }
-
+    
     public List<Food> getFoodList() {
         return OrederdFoodItems;
     }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }

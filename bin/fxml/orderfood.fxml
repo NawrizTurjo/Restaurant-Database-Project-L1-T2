@@ -3,13 +3,20 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderFoodController">
     <children>
-        <ListView fx:id="listView" layoutX="25.0" layoutY="59.0" prefHeight="316.0" prefWidth="250.0" />
-      <ListView fx:id="placedOrder" layoutX="365.0" layoutY="59.0" prefHeight="316.0" prefWidth="212.0" />
+      <ImageView fitHeight="400.0" fitWidth="594.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/cart.jpg" />
+         </image>
+      </ImageView>
+        <ListView fx:id="listView" layoutX="14.0" layoutY="59.0" opacity="0.75" prefHeight="316.0" prefWidth="250.0" />
+      <ListView fx:id="placedOrder" layoutX="374.0" layoutY="59.0" opacity="0.75" prefHeight="316.0" prefWidth="218.0" />
         
       <Label alignment="CENTER" layoutX="33.0" layoutY="21.0" prefHeight="32.0" prefWidth="250.0" text="Available Items">
          <font>
@@ -21,6 +28,6 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button fx:id="confirmButton" layoutX="275.0" layoutY="350.0" mnemonicParsing="false" onAction="#confirm" prefHeight="25.0" prefWidth="90.0" text="Confirm Order" />
+      <Button fx:id="confirmButton" layoutX="263.0" layoutY="350.0" mnemonicParsing="false" onAction="#confirm" prefHeight="25.0" prefWidth="112.0" text="Confirm Now" />
     </children>
 </AnchorPane>

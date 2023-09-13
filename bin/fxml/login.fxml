@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
@@ -25,11 +26,11 @@
          <font>
             <Font size="26.0" />
          </font></Label>
-      <TextField fx:id="userText" layoutX="500.0" layoutY="417.0" prefHeight="25.0" prefWidth="155.0" styleClass="text" AnchorPane.bottomAnchor="173.0" AnchorPane.rightAnchor="85.0">
+      <TextField fx:id="userText" alignment="CENTER" layoutX="500.0" layoutY="417.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: pink;" styleClass="text" AnchorPane.bottomAnchor="173.0" AnchorPane.rightAnchor="85.0">
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <PasswordField fx:id="passwordText" layoutX="500.0" layoutY="479.0" prefHeight="25.0" prefWidth="155.0" styleClass="text" AnchorPane.bottomAnchor="111.0" AnchorPane.rightAnchor="85.0">
+      <PasswordField fx:id="passwordText" alignment="CENTER" layoutX="500.0" layoutY="479.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: pink;" styleClass="text" AnchorPane.bottomAnchor="111.0" AnchorPane.rightAnchor="85.0">
          <font>
             <Font size="15.0" />
          </font></PasswordField>
@@ -42,7 +43,10 @@
             <Button fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAction" prefHeight="46.0" text="Login">
                <font>
                   <Font size="20.0" />
-               </font></Button>
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
         </buttons>
       </ButtonBar>
    </children>
