@@ -64,6 +64,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Button fx:id="orderButton" layoutX="387.0" layoutY="501.0" mnemonicParsing="false" onAction="#order" text="Order Now" />
+      <Button fx:id="orderButton" layoutX="540.0" layoutY="498.0" mnemonicParsing="false" onAction="#order" text="Order Now" />
+      <Button fx:id="historyButton" layoutX="220.0" layoutY="498.0" mnemonicParsing="false" onAction="#history" text="VIew Order History" />
    </children>
 </AnchorPane>

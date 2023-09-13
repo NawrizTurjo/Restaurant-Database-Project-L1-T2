@@ -26,47 +26,28 @@ public class ClientRestaurant extends Application {
     public HomeController homeController;
     public RestaurantManager restaurantManager;
 
-    public void setRestaurantManager(RestaurantManager restaurantManager)
-    {
+    public void setRestaurantManager(RestaurantManager restaurantManager) {
         this.restaurantManager = restaurantManager;
     }
 
-
-    public void setRestaurant(Restaurant restaurant){
+    public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
         System.out.println("This is set");
     }
 
-    public Restaurant getRestaurant()
-    {
+    public Restaurant getRestaurant() {
         return this.restaurant;
     }
 
-    // public void setRestaurantByName(String Name)
-    // {
-    //     for(Restaurant r:restaurantManager.getRestaurants())
-    //     {
-    //         if(r.getName().equals(Name))
-    //         {
-    //             this.restaurant = r;
-    //             break;
-    //         }
-    //     }
-    // }
-
-    public void setRestaurantByName(String id)
-{
-    int ID = Integer.parseInt(id);
-    for(Restaurant r:restaurantManager.getRestaurants())
-    {
-        if(r.getId()==ID)
-        {
-            this.restaurant = r;
-            break;
+    public void setRestaurantByName(String id) {
+        int ID = Integer.parseInt(id);
+        for (Restaurant r : restaurantManager.getRestaurants()) {
+            if (r.getId() == ID) {
+                this.restaurant = r;
+                break;
+            }
         }
     }
-}
-
 
     public Stage getStage() {
         return stage;
@@ -101,13 +82,10 @@ public class ClientRestaurant extends Application {
         LoginController controller = loader.getController();
         controller.setMain(this);
 
-        
-
         // Set the primary stage
         stage.setTitle("Login");
         stage.setScene(new Scene(root));
         stage.show();
-        // System.out.println("In loginPage: "+Server.loggedIn.isEmpty());
     }
 
     public void showHomePage(LoginDTO loginDTO) throws Exception {
@@ -121,7 +99,7 @@ public class ClientRestaurant extends Application {
         HomeController controller = loader.getController();
         this.homeController = controller;
 
-        ImageView icon = new ImageView("/assets/"+loginDTO.getRestaurant().getName()+".png");
+        ImageView icon = new ImageView("/assets/" + loginDTO.getRestaurant().getName() + ".png");
         stage.getIcons().add(icon.getImage());
 
         controller.init(loginDTO);
@@ -131,9 +109,9 @@ public class ClientRestaurant extends Application {
         stage.setTitle("Home");
         stage.setScene(new Scene(root));
         stage.show();
-        // System.out.println("In homePage: "+Server.loggedIn.isEmpty()+"as restaurant is added");
+        // System.out.println("In homePage: "+Server.loggedIn.isEmpty()+"as restaurant
+        // is added");
     }
-
 
     public void showAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -145,7 +123,7 @@ public class ClientRestaurant extends Application {
 
     public static void main(String[] args) {
         // This will launch the JavaFX application
-        
+
         launch(args);
     }
 }

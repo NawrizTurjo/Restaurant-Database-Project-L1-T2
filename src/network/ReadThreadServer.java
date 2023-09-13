@@ -8,6 +8,7 @@ import java.util.Map;
 import javafx.application.Platform;
 import resources.Food;
 import resources.Restaurant;
+import utlilities.FoodPassUtil;
 import utlilities.FoodUtil;
 import utlilities.LoginDTO;
 import utlilities.NetworkUtil;
@@ -103,8 +104,32 @@ public class ReadThreadServer implements Runnable {
                     //         }
                     //     }
                     // }
+                    
+                    else if(o instanceof FoodPassUtil)
+                    {
+                        FoodPassUtil f = (FoodPassUtil) o;
+                        System.out.println("Food passesd");
+                        System.out.println(f.getUserName());
+                        System.out.println(f.getRestaurantName());
 
-                    if (o instanceof FoodUtil) {
+                        Map<String, NetworkUtil> loginInfo = Server.getHashMapCustomer();
+                        for (var i : loginInfo.keySet()) {
+                            System.out.println(i);
+                        }
+                        String ID = f.getUserName();
+                        if(loginInfo.containsKey(ID)){
+                            System.out.println("Data paise");
+                            NetworkUtil myNetworkUtil = loginInfo.get(ID);
+                            try {
+                                myNetworkUtil.write(f);
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                System.out.println("Error paise");
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    else if (o instanceof FoodUtil) {
                         FoodUtil f = (FoodUtil) o;
                         System.out.println("Food pathano hoise");
                         System.out.println(f.getRestaurantName());
@@ -129,6 +154,7 @@ public class ReadThreadServer implements Runnable {
                             }
                         }
                     }
+
                 }
             }
         } catch (Exception e) {

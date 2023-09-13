@@ -3,6 +3,7 @@ package network;
 //client ke ptahay server theke
 import javafx.application.Platform;
 import resources.RestaurantManager;
+import utlilities.FoodPassUtil;
 import utlilities.LoginDTO;
 
 import java.io.IOException;
@@ -60,6 +61,13 @@ public class ReadThreadCustomer implements Runnable {
                     if (o instanceof RestaurantManager) {
                         RestaurantManager rManager = (RestaurantManager) o;
                         main.restaurantManager = rManager;
+                    }
+                    if(o instanceof FoodPassUtil){
+                        FoodPassUtil foodPassUtil = (FoodPassUtil) o;
+                        System.out.println(foodPassUtil.getFood());
+                        main.updateFoodList(foodPassUtil.getFood());
+                        // main.orderCustomerSideController.updateFoodOrderList(foodPassUtil.getFood());
+                        
                     }
                 }
 

@@ -1,59 +1,8 @@
 package controller;
 
-// import javafx.event.ActionEvent;
-// import javafx.fxml.FXML;
-// import javafx.scene.control.Button;
-// import javafx.scene.control.Label;
-// import javafx.scene.image.Image;
-// import javafx.scene.image.ImageView;
-
-// public class HomeController {
-
-//     private Main main;
-//     private App app;
-
-//     @FXML
-//     private Label message;
-
-//     @FXML
-//     private ImageView image;
-//     LoginDTO loginDTO;
-
-//     @FXML
-//     private Button button;
-
-//     public void init(LoginDTO loginDTO) {
-//         Restaurant r = loginDTO.getRestaurant();
-//         String Data = r.getName()+"\n"+r.getPrice()+"\n"+r.getScore()+"\n"+r.getZipCode()+r.getTotalFood();
-//         message.setText(Data);
-//         Image img = new Image(App.class.getResourceAsStream("1.png"));
-//         image.setImage(img);
-//         this.loginDTO = loginDTO;
-//     }
-
-//     @FXML
-//     void logoutAction(ActionEvent event) {
-//         try {
-//             main.showLoginPage();
-//         } catch (Exception e) {
-//             e.printStackTrace();
-//         }
-//     }
-
-//     void setMain(Main main) {
-//         this.main = main;
-//     }
-
-//     void setMain(App app) {
-//         this.app = app;
-//     }
-
-// }
-
-import java.net.URL;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import app.ClientCustomer;
 import app.ClientRestaurant;
@@ -62,7 +11,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
@@ -73,13 +21,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import resources.Food;
 import resources.Restaurant;
+import utlilities.FoodPassUtil;
+import utlilities.FoodUtil;
 import utlilities.FoodUtilObject;
 import utlilities.LoginDTO;
 
 public class HomeController {
 
     private ClientRestaurant main;
-    private ClientCustomer app;
     LoginDTO loginDTO;
 
     @FXML
@@ -162,8 +111,21 @@ public class HomeController {
                         {
                             confirmButton.setOnAction(event -> {
                                 FoodUtilObject item = getTableView().getItems().get(getIndex());
-                                foods.remove(item);
+                                foods.remove(item); // Ensure that the item is removed here
                                 orderTable.getItems().remove(item);
+                                System.out.println("Item removed: " + item);
+                                FoodUtil foodUtil = (FoodUtil) item;
+                                FoodPassUtil foodPassUtil = new FoodPassUtil(foodUtil);
+                                System.out.println(foodPassUtil.getFood());
+                            
+                                // Debugging statement to check if the item is removed before sending
+                                System.out.println("Sending FoodPassUtil...");
+                            
+                                try {
+                                    main.getNetworkUtil().write(foodPassUtil);
+                                } catch (IOException e) {
+                                    System.out.println("Error passing foodutil");
+                                }
                             });
                         }
 
@@ -196,7 +158,4 @@ public class HomeController {
         this.main = main;
     }
 
-    void setMain(ClientCustomer app) {
-        this.app = app;
-    }
 }

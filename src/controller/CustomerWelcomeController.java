@@ -32,6 +32,7 @@ public class CustomerWelcomeController {
         String name = nameCustomer.getText();
         main.userName = name;
         System.out.println(name);
+        main.getNetworkUtil().write(name);
         main.showHomePage(name);
         //close this stage
         stage.close();

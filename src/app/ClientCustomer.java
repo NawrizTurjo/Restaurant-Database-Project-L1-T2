@@ -1,13 +1,17 @@
 package app;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.print.DocFlavor.STRING;
 
 import controller.CustomerWelcomeController;
 import controller.HomeScreenController;
 import controller.LoginController;
+import controller.OrderCustomerSideController;
 import controller.OrderFoodController;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import network.ReadThreadCustomer;
+import resources.Food;
 import resources.RestaurantManager;
 import utlilities.NetworkUtil;
 
@@ -25,7 +30,10 @@ public class ClientCustomer extends Application {
     private Stage stage;
     private NetworkUtil networkUtil;
     public static RestaurantManager restaurantManager;
+    public OrderCustomerSideController orderCustomerSideController;
     public String userName;
+    public List<Food> OrederdFoodItems = new ArrayList<>();
+    double price = 0;
     // public boolean isServer = false;
 
     public Stage getStage() {
@@ -43,6 +51,20 @@ public class ClientCustomer extends Application {
 
     public NetworkUtil getNetworkUtil() {
         return networkUtil;
+    }
+
+    public void updateFoodList(Food food) {
+        String resName = restaurantManager.getRestaurantName(food.getRestaurantId());
+        food.setRestaurantName(resName);
+        price += food.getPrice();
+        OrederdFoodItems.add(food);
+        System.out.println("List Updated with " + food);
+    }
+    
+
+    public double getPrice()
+    {
+        return this.price;
     }
 
     @Override
@@ -89,6 +111,8 @@ public class ClientCustomer extends Application {
         stage.show();
         // System.out.println("In customerloginPage: "+Server.loggedIn.isEmpty());
     }
+
+    
 
     // public void showLoginPage() throws Exception {
     //     // XML Loading using FXMLLoader
@@ -177,5 +201,9 @@ public class ClientCustomer extends Application {
         // restaurantManager.addFood(i);
         // }
         launch(args);
+    }
+
+    public List<Food> getFoodList() {
+        return OrederdFoodItems;
     }
 }

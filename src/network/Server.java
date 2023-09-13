@@ -5,7 +5,6 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import resources.FileOp;
 import resources.Food;
@@ -42,14 +41,27 @@ public class Server {
         return loggedIn;
     }
 
-    Server() {
-        // userMap = new HashMap<>();
-        // userMap.put("a", "a");
-        // userMap.put("b", "b");
-        // userMap.put("c", "c");
-        // userMap.put("d", "d");
-        // userMap.put("e", "e");
+    public static Map<String, NetworkUtil> customerLoggedIn;
 
+    public static void customerLoggedIn(String name, NetworkUtil myNetworkUtil) {
+        loggedIn.put(name, myNetworkUtil);
+        System.out.println(name + " logged in");
+        if (myNetworkUtil == null) {
+            System.out.println("Null");
+        } else {
+            System.out.println("Not Null");
+        }
+        for (String key : loggedIn.keySet()) {
+            System.out.println("Key: " + key);
+        }
+        System.out.println(loggedIn.isEmpty());
+    }
+
+    public static Map<String, NetworkUtil> getHashMapCustomer() {
+        return loggedIn;
+    }
+
+    Server() {
         userMap = FileOp.readRestaurantPass();
 
         for (String s : userMap.keySet()) {
@@ -57,11 +69,6 @@ public class Server {
         }
         loggedIn = new HashMap<>();
 
-        // loggedIn = ;
-
-        // FileOp fileOp = new FileOp();
-        // restaurantList = fileOp.fileRestaurant();
-        // foodList = fileOp.fileFood();
         restaurantManager = new RestaurantManager("Restaurant Manager");
 
         FileOp fileReader = new FileOp();
@@ -79,12 +86,8 @@ public class Server {
         for (Restaurant i : restaurantManager.getRestaurants()) {
             restaurantMap.put(i.getId().toString(), i);
         }
-        // loggedIn = new HashMap<>();
 
         System.out.println(loggedIn.isEmpty());
-
-        // file theke input nibo
-        // map e Restaurant er password ar username put kore dibo
 
         try {
             serverSocket = new ServerSocket(33333);
@@ -104,27 +107,16 @@ public class Server {
             if (isCustomer) {
                 networkUtil.write(restaurantManager);
                 System.out.println("This is customer");
+                String name = (String) networkUtil.read();
+                customerLoggedIn(name,networkUtil);
                 new ReadThreadServer(userMap, restaurantMap, networkUtil);
             } else {
-                // System.out.println("Inside Server");
-                // String name = (String) networkUtil.read();
-                // String password = (String) networkUtil.read();
-                // System.out.println(name);
-                // System.out.println(password);
-
-                // if (userMap.containsKey(name)) {
-                // if (userMap.get(name).equals(password)) {
-                // setLoggedIn(name, networkUtil);
                 networkUtil.write(restaurantManager);
                 LoginDTO loginDTO = (LoginDTO) networkUtil.read();
                 setLoggedIn(loginDTO.getUserName(), networkUtil);
                 System.out.println("This is restaurant");
                 new ReadThreadServer(userMap, restaurantMap, networkUtil);
-                // }
-                // } else {
-                // System.out.println("Invalid Login");
             }
-
         }
     }
 
