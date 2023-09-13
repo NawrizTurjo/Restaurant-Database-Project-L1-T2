@@ -7,9 +7,12 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">   <children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="861.0" stylesheets="@../CSS/searchPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">   <children>
       <ButtonBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" />
       <ListView fx:id="restaurantList" layoutX="14.0" layoutY="54.0" prefHeight="493.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <cursor>
@@ -19,17 +22,17 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ListView>
-      <Label fx:id="searchLabel" alignment="CENTER" layoutX="218.0" layoutY="142.0" prefHeight="53.0" prefWidth="413.0" text="Search Page">
+      <Label fx:id="searchLabel" alignment="CENTER" layoutX="218.0" layoutY="142.0" prefHeight="53.0" prefWidth="413.0" text="Search Page" textFill="#ff006f">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="nameText" alignment="CENTER" layoutX="221.0" layoutY="313.0" prefHeight="39.0" prefWidth="413.0" promptText="Enter your desire" visible="false">
+      <TextField fx:id="nameText" alignment="CENTER" layoutX="221.0" layoutY="313.0" prefHeight="39.0" prefWidth="413.0" promptText="Enter your desire" styleClass="text-field" visible="false">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="secondaryText" alignment="CENTER" layoutX="219.0" layoutY="377.0" prefHeight="39.0" prefWidth="413.0" visible="false">
+      <TextField fx:id="secondaryText" alignment="CENTER" layoutX="219.0" layoutY="377.0" prefHeight="39.0" prefWidth="413.0" styleClass="text-field" visible="false">
          <font>
             <Font size="18.0" />
          </font>
@@ -39,6 +42,27 @@
          <font>
             <Font size="36.0" />
          </font>
+         <textFill>
+            <RadialGradient centerX="0.5276243093922652" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.30000001192092896" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
       </Label>
       <Button fx:id="orderButton" layoutX="387.0" layoutY="501.0" mnemonicParsing="false" onAction="#order" text="Order Now" />
    </children>

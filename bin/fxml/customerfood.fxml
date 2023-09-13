@@ -7,14 +7,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="809.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFoodController">
    <children>
-      <TableView fx:id="foodTable" layoutX="1.0" layoutY="1.0" prefHeight="809.0" prefWidth="1025.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <TableView fx:id="foodTable" layoutX="1.0" layoutY="1.0" prefHeight="809.0" prefWidth="1025.0" styleClass="tableView" stylesheets="@../CSS/tableFoodSearch.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columns>
-          <TableColumn fx:id="nameCol" minWidth="100.0" prefWidth="309.0" text="Food Name" />
-          <TableColumn fx:id="idCol" minWidth="100.0" prefWidth="119.0" text="Restaurant Name" />
-            <TableColumn fx:id="catCol" minWidth="100.0" prefWidth="397.0" text="Category" />
-            <TableColumn fx:id="priceCol" maxWidth="200.0" minWidth="100.0" prefWidth="198.0" text="Price" />
+          <TableColumn fx:id="nameCol" minWidth="100.0" prefWidth="309.0" styleClass="nameColumn" text="Food Name" />
+          <TableColumn fx:id="idCol" minWidth="100.0" prefWidth="119.0" styleClass="restaurantColumn" text="Restaurant Name" />
+            <TableColumn fx:id="catCol" minWidth="100.0" prefWidth="397.0" styleClass="categoryColumn" text="Category" />
+            <TableColumn fx:id="priceCol" maxWidth="200.0" minWidth="100.0" prefWidth="198.0" styleClass="priceColumn" text="Price" />
         </columns>
       </TableView>
-      <Button fx:id="closeButton" layoutX="915.0" layoutY="742.0" mnemonicParsing="false" onAction="#close" text="Close" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="65.0" />
+      <Button fx:id="closeButton" layoutX="915.0" layoutY="742.0" mnemonicParsing="false" onAction="#close" styleClass="closeButton" stylesheets="@../CSS/tableFoodSearch.css" text="Close" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="65.0" />
    </children>
 </AnchorPane>

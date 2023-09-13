@@ -1,0 +1,179 @@
+/* Style for the TextField when focused */
+.text-field-focused {
+    -fx-background-color: white;
+}
+
+/* Style for the TextField when not focused */
+.text-field {
+    -fx-background-color: rgb(219, 219, 219);
+}
+
+/* Style for the Label */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(84, 149, 179);
+}
+
+/* Style for the Label when focused */
+.label-focused {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(84, 149, 179);
+}
+
+/* Style for the Label when not focused */
+.label-unfocused {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(84, 149, 179);
+}
+
+/* Style for the Button */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(84, 149, 179);
+    -fx-text-fill: white;
+}
+
+/* Style for the Button when focused */
+.button-focused {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(84, 149, 179);
+    -fx-text-fill: white;
+}
+
+/* Style for the Button when not focused */
+.button-unfocused {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(84, 149, 179);
+    -fx-text-fill: white;
+}
+
+/* Style for the Button when hovered */
+.button:hover {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(84, 149, 179);
+    -fx-text-fill: white;
+}
+
+/* Style for the Button when pressed */
+.button:pressed {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(84, 149, 179);
+    -fx-text-fill: white;
+}
+
+/* Style for the Button when disabled */
+.button:disabled {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(84, 149, 179);
+    -fx-text-fill: white;
+}
+
+#list{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(204, 35, 255);
+    -fx-text-fill: rgb(211, 255, 52);
+}
+
+/* Style for the TableView */
+.table-view {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableView when focused */
+.table-view-focused {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableView when not focused */
+.table-view-unfocused {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableView when hovered */
+.table-view:hover {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableView when pressed */
+.table-view:pressed {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableView when disabled */
+.table-view:disabled {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader */
+.table-column-header {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when focused */
+.table-column-header-focused {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when not focused */
+.table-column-header-unfocused {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when hovered */
+.table-column-header:hover {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when pressed */
+.table-column-header:pressed {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when disabled */
+.table-column-header:disabled {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when sorted */
+.table-column-header .sort-icon {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when sorted and focused */
+.table-column-header .sort-icon-focused {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when sorted and not focused */
+.table-column-header .sort-icon-unfocused {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when sorted and hovered */
+.table-column-header .sort-icon:hover {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when sorted and pressed */
+
+.table-column-header .sort-icon:pressed {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+/* Style for the TableColumnHeader when sorted and disabled */
+.table-column-header .sort-icon:disabled {
+    -fx-background-color: rgb(84, 149, 179);
+}
+
+
+

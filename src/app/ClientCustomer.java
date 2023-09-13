@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import network.ReadThreadCustomer;
@@ -64,6 +65,9 @@ public class ClientCustomer extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/customerwelcome.fxml"));
         Parent root = loader.load();
+
+        ImageView icon = new ImageView("/assets/icon.jpg");
+        stage.getIcons().add(icon.getImage());
 
         // Loading the controller
         CustomerWelcomeController controller = loader.getController();

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import network.ReadThreadRestaurant;
 import resources.Restaurant;
@@ -100,6 +101,8 @@ public class ClientRestaurant extends Application {
         LoginController controller = loader.getController();
         controller.setMain(this);
 
+        
+
         // Set the primary stage
         stage.setTitle("Login");
         stage.setScene(new Scene(root));
@@ -117,6 +120,9 @@ public class ClientRestaurant extends Application {
         // Loading the controller
         HomeController controller = loader.getController();
         this.homeController = controller;
+
+        ImageView icon = new ImageView("/assets/"+loginDTO.getRestaurant().getName()+".png");
+        stage.getIcons().add(icon.getImage());
 
         controller.init(loginDTO);
         controller.setMain(this);

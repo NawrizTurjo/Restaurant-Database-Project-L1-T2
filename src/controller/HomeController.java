@@ -113,12 +113,17 @@ public class HomeController{
     @FXML
     private TableColumn<Food, Double> priceCol;
 
+    @FXML
+    private ImageView logo;
+
     public void init(LoginDTO loginDTO) {
         Restaurant r = loginDTO.getRestaurant();
         String Data = "Name: " + r.getName() + "\n" + "Price: " + r.getPrice() + "\n" + "Score: " + r.getScore() + "\n"
                 + "ZipCode: " + r.getZipCode() + "\n" + "Total Food Count: " + r.getTotalFood();
         System.out.println(Data);
         attributes.setText(Data);
+
+        logo.setImage(new Image("/assets/"+r.getName()+".png"));
 
         ObservableList<Food> foodList = FXCollections.observableArrayList(r.getMenu());
         nameCol.setCellValueFactory(new PropertyValueFactory<>("FoodName"));

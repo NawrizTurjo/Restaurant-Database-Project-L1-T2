@@ -1,3 +1,26 @@
-#name{
-    -fx-cursor: url('../assets/name.webp'),auto;
+/* styles.css */
+
+/* Apply custom font family and font size to all buttons */
+.button {
+    -fx-font-family: "Courier New", Monospace; /* Change to your desired font family */
+    -fx-font-size: 14px; /* Change to your desired font size */
+    -fx-background-color: radial-gradient(center 50%-40%,radius 200%, #2dd473, #b12a2a); /* Change to your desired background color */
+    -fx-text-fill: #49aedd; /* Change to your desired hover text color */
 }
+
+/* Customize the hover effect for all buttons */
+.button:hover {
+    -fx-background-color: #2ECC71; /* Change to your desired hover background color */
+    -fx-text-fill: #da1616; /* Change to your desired hover text color */
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+}
+
+.button:pressed{
+    -fx-background-color: #2ECC71; /* Change to your desired hover background color */
+    -fx-text-fill: #da1616; /* Change to your desired hover text color */
+    -fx-font-weight: bold ;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+}
+

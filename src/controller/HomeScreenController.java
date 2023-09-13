@@ -220,7 +220,7 @@ public class HomeScreenController implements Initializable {
     private void displayFood(List<Food> foods, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/customerfood.fxml"));
         Parent root = loader.load();
-        CustomerFood controller = loader.getController();
+        CustomerFoodController controller = loader.getController();
         controller.init(foods);
 
         Stage stage = new Stage();
@@ -339,6 +339,27 @@ public class HomeScreenController implements Initializable {
 
         restaurantList.setItems(searchRestaurant);
         foodList.setItems(searchFood);
+
+        nameText.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                nameText.getStyleClass().clear();
+                nameText.getStyleClass().add("text-field-focused");
+            } else {
+                nameText.getStyleClass().clear();
+                nameText.getStyleClass().add("text-field");
+            }
+        });
+        
+        secondaryText.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                secondaryText.getStyleClass().clear();
+                secondaryText.getStyleClass().add("text-field-focused");
+            } else {
+                secondaryText.getStyleClass().clear();
+                secondaryText.getStyleClass().add("text-field");
+            }
+        });
+        
 
     }
     public ClientCustomer main;

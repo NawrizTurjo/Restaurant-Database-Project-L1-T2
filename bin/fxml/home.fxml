@@ -10,12 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
+      <ImageView fx:id="logo" fitHeight="281.0" fitWidth="457.0" layoutX="1.0" layoutY="-2.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="attributes" alignment="CENTER" layoutX="-1.0" layoutY="-6.0" prefHeight="289.0" prefWidth="457.0" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="537.0" AnchorPane.topAnchor="-6.0">
          <font>
             <Font size="28.0" />
          </font>  
       </Label>
-      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="637.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
       <TableView fx:id="menuTable" layoutX="453.0" prefHeight="728.0" prefWidth="540.0">
         <columns>
           <TableColumn fx:id="nameCol" prefWidth="208.0" text="Food Name" />

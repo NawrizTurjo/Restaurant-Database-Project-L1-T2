@@ -8,21 +8,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1217.0" stylesheets="@../CSS/restaurantUi.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerRestaurantController">
    <children>
-      <TableView fx:id="tableView" editable="true" layoutX="-3.0" layoutY="-3.0" prefHeight="923.0" prefWidth="1217.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <TableView fx:id="tableView" editable="false" layoutX="-3.0" layoutY="-3.0" prefHeight="923.0" prefWidth="1217.0" styleClass="searchTable" stylesheets="@../CSS/tableRestaurantSearch.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <columns>
-            <TableColumn fx:id="idColumn" maxWidth="500.0" minWidth="50.0" prefWidth="50.0" text="Restaurant ID" />
+            <TableColumn fx:id="idColumn" maxWidth="500.0" minWidth="50.0" prefWidth="50.0" text="ID" />
             <TableColumn fx:id="nameColumn" maxWidth="200.0" minWidth="100.0" prefWidth="104.0" text="Restaurant Name" />
             <TableColumn fx:id="scoreColumn" maxWidth="200.0" minWidth="50.0" prefWidth="50.0" text="Score" />
             <TableColumn fx:id="priceColumn" maxWidth="200.0" minWidth="50.0" prefWidth="48.0" text="Price" />
             <TableColumn fx:id="zipColumn" maxWidth="200.0" minWidth="60.0" prefWidth="72.0" text="Zip Code" />
             <TableColumn fx:id="categoryColumn" maxWidth="500.0" minWidth="100.0" prefWidth="226.0" text="Categories" />
-            <TableColumn fx:id="menuColumn" maxWidth="1000.0" minWidth="100.0" prefWidth="634.0" text="Menu" />
+            <TableColumn fx:id="menuColumn" maxWidth="1000.0" minWidth="100.0" prefWidth="634.0" styleClass="menu" text="Menu" />
             
          </columns>
          <opaqueInsets>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </opaqueInsets>
       </TableView>
-      <Button fx:id="closeButton" layoutX="1106.0" layoutY="851.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" AnchorPane.bottomAnchor="47.0" AnchorPane.rightAnchor="66.0" />
+      <Button fx:id="closeButton" layoutX="1106.0" layoutY="851.0" mnemonicParsing="false" onAction="#closeWindow" styleClass="closeButton" stylesheets="@../CSS/tableRestaurantSearch.css" text="Close" AnchorPane.bottomAnchor="47.0" AnchorPane.rightAnchor="66.0" />
    </children>
 </AnchorPane>
