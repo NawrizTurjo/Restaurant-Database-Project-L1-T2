@@ -30,9 +30,6 @@ public class CustomerRestaurantController {
     @FXML
     private TableColumn<Restaurant, String> nameColumn;
 
-    // @FXML
-    // private TableColumn<Restaurant, List<String>> categoryColumn;
-
     @FXML
     private TableColumn<Restaurant, Double> priceColumn;
 
@@ -56,7 +53,6 @@ public class CustomerRestaurantController {
 
     @FXML
     void closeWindow(ActionEvent event) {
-        // Handle the close button action here
         Alert a = new Alert(AlertType.CONFIRMATION);
             a.setTitle("Confirmation");
             a.initModality(Modality.APPLICATION_MODAL);
@@ -74,13 +70,10 @@ public class CustomerRestaurantController {
     }
 
     public void init(List<Restaurant> restaurants) {
-        // Initialize the TableView here
         ObservableList<Restaurant> data = FXCollections.observableArrayList(restaurants);
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-        // categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         categoryColumn.setCellFactory(column -> {
             return new TableCell<Restaurant, List<String>>() {

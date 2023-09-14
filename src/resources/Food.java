@@ -85,12 +85,6 @@ public class Food implements Serializable{
 
     @Override
     public String toString() {
-        // return "Food{" +
-        //         "restaurantId=" + restaurantId +
-        //         ", category='" + category + '\'' +
-        //         ", foodName='" + foodName + '\'' +
-        //         ", price=" + price +
-        //         '}';
         return restaurantId+", "+category+", "+foodName+", "+price;
     }
 }

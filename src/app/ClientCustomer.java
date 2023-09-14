@@ -101,7 +101,6 @@ public class ClientCustomer extends Application {
     }
 
     public void showCustomerLogin() throws IOException {
-        // XML Loading using FXMLLoader
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/customerwelcome.fxml"));
         Parent root = loader.load();
@@ -109,11 +108,9 @@ public class ClientCustomer extends Application {
         ImageView icon = new ImageView("/assets/icon.jpg");
         stage.getIcons().add(icon.getImage());
 
-        // Loading the controller
         CustomerWelcomeController controller = loader.getController();
         controller.setMain(this);
 
-        // Set the primary stage
         stage.setTitle("Customer Login");
         stage.setScene(new Scene(root));
         stage.setResizable(false);
@@ -169,7 +166,7 @@ public class ClientCustomer extends Application {
     public List<Food> getFoodList() {
         return OrederdFoodItems;
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }

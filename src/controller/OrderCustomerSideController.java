@@ -1,7 +1,6 @@
 package controller;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import app.ClientCustomer;
@@ -52,18 +51,12 @@ public class OrderCustomerSideController {
     @FXML
     void back(ActionEvent event) throws Exception {
         this.stage.close();
-        // main.showHomePage(main.getUsername());
     }
 
     private ObservableList<Food> foodList = FXCollections.observableArrayList();
 
 
     private Stage stage;
-
-    // public void setList(List<Food> foodList) {
-    //     this.foodList = foodList;
-    //     // orderTable.setItems(main.getFoodList());
-    // }
 
     public void updateFoodOrderList(Food food) {
         Platform.runLater(new Runnable() {
@@ -89,8 +82,6 @@ public class OrderCustomerSideController {
             @Override
             public void run() {
                 foodList.addAll(foods);
-                // ObservableList<Food> foodObservableList = FXCollections.observableArrayList(main.getFoodList());
-
                 orderRestaurant.setCellValueFactory(new PropertyValueFactory<>("restaurantName"));
                 orderCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
                 orderFood.setCellValueFactory(new PropertyValueFactory<>("foodName"));
@@ -101,9 +92,7 @@ public class OrderCustomerSideController {
             }
         });
     }
-
-    // double price = 0;
-
+    
     public void setStage(Stage stage) {
         this.stage = stage;
     }

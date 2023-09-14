@@ -6,6 +6,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderFoodController">
@@ -15,19 +18,51 @@
             <Image url="@../assets/cart.jpg" />
          </image>
       </ImageView>
-        <ListView fx:id="listView" layoutX="14.0" layoutY="59.0" opacity="0.75" prefHeight="316.0" prefWidth="250.0" />
-      <ListView fx:id="placedOrder" layoutX="374.0" layoutY="59.0" opacity="0.75" prefHeight="316.0" prefWidth="218.0" />
+        <ListView fx:id="listView" layoutX="14.0" layoutY="59.0" opacity="0.75" prefHeight="316.0" prefWidth="250.0" styleClass="list" stylesheets="@../CSS/searchPage.css" />
+      <ListView fx:id="placedOrder" layoutX="374.0" layoutY="59.0" opacity="0.75" prefHeight="316.0" prefWidth="218.0" styleClass="list" stylesheets="@../CSS/searchPage.css" />
         
-      <Label alignment="CENTER" layoutX="33.0" layoutY="21.0" prefHeight="32.0" prefWidth="250.0" text="Available Items">
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="250.0" text="Available Items" textAlignment="CENTER">
          <font>
-            <Font size="22.0" />
+            <Font name="Lucida Console" size="27.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.06666667014360428" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05000000074505806" green="0.19476190209388733" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label fx:id="labelCart" alignment="CENTER" layoutX="365.0" layoutY="21.0" prefHeight="32.0" prefWidth="212.0" text="Your Cart">
+      <Label fx:id="labelCart" alignment="CENTER" layoutX="374.0" layoutY="14.0" prefHeight="32.0" prefWidth="212.0" text="Your Cart" textAlignment="CENTER">
          <font>
-            <Font size="22.0" />
+            <Font name="Lucida Console" size="27.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.06666667014360428" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05000000074505806" green="0.19476190209388733" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Button fx:id="confirmButton" layoutX="263.0" layoutY="350.0" mnemonicParsing="false" onAction="#confirm" prefHeight="25.0" prefWidth="112.0" text="Confirm Now" />
+      <Button fx:id="confirmButton" layoutX="264.0" layoutY="345.0" mnemonicParsing="false" onAction="#confirm" prefHeight="25.0" prefWidth="112.0" stylesheets="@../CSS/searchPage.css" text="Confirm Now" />
     </children>
 </AnchorPane>

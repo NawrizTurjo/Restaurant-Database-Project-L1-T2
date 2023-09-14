@@ -19,9 +19,9 @@
             <Image url="@../assets/Restaurant%20Table.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="myLabel" alignment="CENTER" layoutY="50.0" prefHeight="53.0" prefWidth="533.0" text="Welcome                      Customer" textFill="#8e65ee" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <Label fx:id="myLabel" alignment="CENTER" layoutY="50.0" prefHeight="53.0" prefWidth="533.0" text="Welcome          Customer" textFill="#8e65ee" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
          <font>
-            <Font size="36.0" />
+            <Font name="Consolas" size="36.0" />
          </font>
          <effect>
             <DropShadow>

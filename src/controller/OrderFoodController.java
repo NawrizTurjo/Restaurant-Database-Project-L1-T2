@@ -9,7 +9,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
-import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.ListCell;
@@ -44,7 +43,6 @@ public class OrderFoodController implements Initializable {
 
     @FXML
     void confirm(ActionEvent event) throws IOException {
-        // Send the orderedItems to the server
         Alert a = new Alert(AlertType.CONFIRMATION);
         a.setTitle("Confirmation");
         a.initModality(Modality.APPLICATION_MODAL);
@@ -65,12 +63,8 @@ public class OrderFoodController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // ImageView icon = new ImageView("/assets/icon.jpg");
-        // stage.getIcons().add(icon.getImage());
         listView.setItems(items);
         placedOrder.setItems(orderedItems);
-
-        // Customize the list cell in listView to include an "Add" button
         listView.setCellFactory(new Callback<ListView<Food>, ListCell<Food>>() {
             @Override
             public ListCell<Food> call(ListView<Food> param) {
@@ -80,7 +74,6 @@ public class OrderFoodController implements Initializable {
                     {
                         addButton.setOnAction((ActionEvent event) -> {
                             Food item = getItem();
-                            // Add the item to placedOrder
                             orderedItems.add(item);
                             System.out.println("Added: " + item);
                         });
@@ -102,7 +95,6 @@ public class OrderFoodController implements Initializable {
             }
         });
 
-        // Customize the list cell in placedOrder to include a "Remove" button
         placedOrder.setCellFactory(new Callback<ListView<Food>, ListCell<Food>>() {
             @Override
             public ListCell<Food> call(ListView<Food> param) {
@@ -112,7 +104,6 @@ public class OrderFoodController implements Initializable {
                     {
                         removeButton.setOnAction((ActionEvent event) -> {
                             Food item = getItem();
-                            // Remove the item from placedOrder
                             orderedItems.remove(item);
                             System.out.println("Removed: " + item);
                         });
@@ -121,7 +112,6 @@ public class OrderFoodController implements Initializable {
                     @Override
                     protected void updateItem(Food item, boolean empty) {
                         super.updateItem(item, empty);
-
                         if (empty || item == null) {
                             setText(null);
                             setGraphic(null);

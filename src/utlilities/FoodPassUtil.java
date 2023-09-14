@@ -4,7 +4,7 @@ import resources.Food;
 
 public class FoodPassUtil extends FoodUtil{
 
-    private static final long serialVersionUID = 5525171917750934004L; // Use the correct UID
+    private static final long serialVersionUID = 5525171917750934004L;
 
     String className;
 

@@ -26,15 +26,6 @@ public class Server{
     public static void setLoggedIn(String name, NetworkUtil myNetworkUtil) {
         loggedIn.put(name, myNetworkUtil);
         System.out.println(name + " logged in");
-        if (myNetworkUtil == null) {
-            System.out.println("Null");
-        } else {
-            System.out.println("Not Null");
-        }
-        for (String key : loggedIn.keySet()) {
-            System.out.println("Key: " + key);
-        }
-        System.out.println(loggedIn.isEmpty());
     }
 
     public static Map<String, NetworkUtil> getHashMap() {
@@ -46,15 +37,6 @@ public class Server{
     public static void customerLoggedIn(String name, NetworkUtil myNetworkUtil) {
         loggedIn.put(name, myNetworkUtil);
         System.out.println(name + " logged in");
-        if (myNetworkUtil == null) {
-            System.out.println("Null");
-        } else {
-            System.out.println("Not Null");
-        }
-        for (String key : loggedIn.keySet()) {
-            System.out.println("Key: " + key);
-        }
-        System.out.println(loggedIn.isEmpty());
     }
 
     public static Map<String, NetworkUtil> getHashMapCustomer() {
@@ -64,9 +46,6 @@ public class Server{
     Server() {
         userMap = FileOp.readRestaurantPass();
 
-        for (String s : userMap.keySet()) {
-            System.out.println(s + " " + userMap.get(s));
-        }
         loggedIn = new HashMap<>();
 
         restaurantManager = new RestaurantManager("Restaurant Manager");

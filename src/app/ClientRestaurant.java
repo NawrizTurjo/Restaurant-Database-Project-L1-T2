@@ -75,22 +75,18 @@ public class ClientRestaurant extends Application {
             new ReadThreadRestaurant(this);
             return true;
         } catch (Exception e) {
-            // showAlert();
             return false;
         }
     }
 
     public void showLoginPage() throws Exception {
-        // XML Loading using FXMLLoader
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load();
 
-        // Loading the controller
         LoginController controller = loader.getController();
         controller.setMain(this);
 
-        // Set the primary stage
         stage.setTitle("Login");
         stage.setScene(new Scene(root));
         stage.show();
@@ -101,9 +97,7 @@ public class ClientRestaurant extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/home.fxml"));
         Parent root = loader.load();
-        // setRestaurant(loginDTO.getRestaurant());
 
-        // Loading the controller
         HomeController controller = loader.getController();
         this.homeController = controller;
 
@@ -114,7 +108,6 @@ public class ClientRestaurant extends Application {
         controller.init(loginDTO);
         controller.setMain(this);
 
-        // Set the primary stage
         stage.setTitle("Home");
         stage.setScene(new Scene(root));
         stage.show();
@@ -129,8 +122,6 @@ public class ClientRestaurant extends Application {
     }
 
     public static void main(String[] args) {
-        // This will launch the JavaFX application
-
         launch(args);
     }
 }

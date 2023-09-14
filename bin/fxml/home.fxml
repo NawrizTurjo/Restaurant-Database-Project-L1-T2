@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="993.0" stylesheets="@../CSS/restaurantUi.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
       <ImageView fx:id="offer" fitHeight="728.0" fitWidth="993.0" layoutX="-1.0" opacity="0.4" pickOnBounds="true" />
       <ImageView fx:id="logo" fitHeight="281.0" fitWidth="457.0" layoutX="1.0" layoutY="-2.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="attributes" alignment="CENTER" layoutX="-1.0" layoutY="-6.0" prefHeight="289.0" prefWidth="457.0" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="537.0" AnchorPane.topAnchor="-6.0">
+      <Label fx:id="attributes" alignment="CENTER_RIGHT" layoutX="-1.0" layoutY="140.0" prefHeight="143.0" prefWidth="463.0" styleClass="labelText" stylesheets="@../CSS/restaurantUi.css" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="531.0" AnchorPane.topAnchor="140.0">
          <font>
             <Font size="28.0" />
          </font>  

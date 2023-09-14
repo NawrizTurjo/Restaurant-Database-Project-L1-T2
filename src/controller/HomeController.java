@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.ClientCustomer;
 import app.ClientRestaurant;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,9 +31,6 @@ public class HomeController {
 
     @FXML
     private Label attributes;
-
-    // @FXML
-    // private Button button;
 
     @FXML
     private TableColumn<Food, String> catCol;
@@ -78,8 +73,8 @@ public class HomeController {
 
     public void init(LoginDTO loginDTO) {
         Restaurant r = loginDTO.getRestaurant();
-        String Data = "Name: " + r.getName() + "\n" + "Price: " + r.getPrice() + "\n" + "Score: " + r.getScore() + "\n"
-                + "ZipCode: " + r.getZipCode() + "\n" + "Total Food Count: " + r.getTotalFood();
+        String Data = r.getPrice() + "  " + r.getScore() + "  "
+                + r.getZipCode() + "\n" + "Total Food: " + r.getTotalFood();
         System.out.println(Data);
         attributes.setText(Data);
 
@@ -115,20 +110,16 @@ public class HomeController {
                         {
                             confirmButton.setOnAction(event -> {
                                 FoodUtilObject item = getTableView().getItems().get(getIndex());
-                                foods.remove(item); // Ensure that the item is removed here
+                                foods.remove(item);
                                 orderTable.getItems().remove(item);
-                                System.out.println("Item removed: " + item);
                                 FoodUtil foodUtil = (FoodUtil) item;
                                 FoodPassUtil foodPassUtil = new FoodPassUtil(foodUtil);
                                 System.out.println(foodPassUtil.getFood());
                             
-                                // Debugging statement to check if the item is removed before sending
-                                System.out.println("Sending FoodPassUtil...");
                             
                                 try {
                                     main.getNetworkUtil().write(foodPassUtil);
                                 } catch (IOException e) {
-                                    System.out.println("Error passing foodutil");
                                 }
                             });
                         }

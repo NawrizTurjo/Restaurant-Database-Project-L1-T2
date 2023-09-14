@@ -34,7 +34,6 @@ public class CustomerWelcomeController {
         System.out.println(name);
         main.getNetworkUtil().write(name);
         main.showHomePage(name);
-        //close this stage
         stage.close();
     }
 

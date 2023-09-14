@@ -1,134 +1,68 @@
-/* Apply some basic styling to the TableView */
-/* #tableView {
-    -fx-background-color: #002fff;
-} */
-
-/* Style the table columns */
 #idColumn, #nameColumn, #scoreColumn, #priceColumn, #zipColumn, #categoryColumn {
     -fx-font-weight: bold;
     -fx-cursor: hand;
     -fx-alignment: TOP_CENTER;
-    -fx-font-family: "Courier New", Monospace; /* Change to your desired font family */
+    -fx-font-family: "Courier New", Monospace;
     -fx-font-size: 20px;
 }
 #menuColumn{
     -fx-font-weight: bold;
     -fx-cursor: hand;
-    -fx-font-family: "Courier New", Monospace; /* Change to your desired font family */
+    -fx-font-family: "Courier New", Monospace;
     -fx-font-size: 12px;
-    /* -fx-pref-width: 200; */
 }
 
-/* Apply custom style to column headers */
 .table-column .label {
     -fx-font-weight: bold;
-    -fx-font-family: "Times New Roman", serif; /* Change to your desired font family */
-    -fx-font-size: 10px; /* Set the desired font size for column headers */
+    -fx-font-family: "Times New Roman", serif;
+    -fx-font-size: 15px;
 }
 
-
-
-/* Add alternating row colors to the table */
-/* You can adjust the colors to your preference */
-/* .table-row-cell:odd {
-    -fx-background-color: #002fff;
-    -fx-text-fill: rgb(84, 149, 179);
-} */
-
-/* Style the "Close" button */
 #closeButton {
-    -fx-text-fill: rgb(50, 57, 128);
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-font-weight: bold;
     -fx-padding: 10px 20px;
     -fx-background-color: radial-gradient(center 50%-40% ,radius 200%, #b0d42d, #b12a2a);
     -fx-background-radius: 15;
 }
 
-/* Hover effect for the "Close" button */
 #closeButton:hover {
     -fx-background-color: #2980b9;
-    -fx-text-fill: rgb(57, 187, 107);
+    -fx-text-fill: rgb(174, 250, 203);
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
 
 #closeButton:pressed {
-    -fx-background-color: #0197fc;
-    -fx-text-fill: rgb(255, 0, 234);
+    -fx-background-color: #cefc01;
+    -fx-text-fill: rgb(52, 16, 255);
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
-
 
 .table-cell{
     -fx-background-color: #000407;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #fff99e;
     -fx-cursor: inherit;
-    -fx-background-radius: 6;
+    -fx-background-radius: 3;
 }
 .table-cell:hover{
-    -fx-background-color: #cfea21;
-    -fx-text-fill: #75067b;
+    -fx-background-color: #2e3503;
+    -fx-text-fill: #91f73e;
 }
 .table-cell:pressed{
-    -fx-background-color: #cfea21;
-    -fx-text-fill: #75067b;
+    -fx-background-color: #180b85;
+    -fx-text-fill: #f7ac58;
+    -fx-font-size: 20 ;
 }
 .table-view .column-header:hover{
     -fx-background-color: #fffb00;
     -fx-text-fill: rgb(3, 17, 24);
+    -fx-cursor: hand;
 }
 
-/* .list-view{
-    -fx-background-color: #5e00f5;
-    -fx-text-fill: #90e7f7;
-    -fx-cursor: inherit;
-    -fx-background-radius: 6;
-} */
-/* Add more custom styles as needed */
-
-/* Apply custom styles to the ListView */
-.list-view {
-    -fx-background-color: #f0f0f0; /* Background color */
+.table-view .column-header:pressed{
+    -fx-background-color: #c1fcef;
+    -fx-text-fill: rgb(221, 146, 250);
 }
-
-/* Apply custom styles to the list items (cells) */
-.list-view .list-cell {
-    -fx-text-fill: #333; /* Text color */
-    -fx-font-size: 14px; /* Text font size */
-    -fx-padding: 5px; /* Padding around each cell */
-}
-
-/* Apply custom styles to the selected item */
-.list-view .list-cell:selected {
-    -fx-background-color: #0070cc; /* Background color for selected item */
-    -fx-text-fill: white; /* Text color for selected item */
-}
-
-/* Apply custom styles to the focus indicator (border) */
-.list-view .list-cell:filled:focused {
-    -fx-background-color: transparent; /* Transparent background for focused item */
-    -fx-border-color: #0070cc; /* Border color for focused item */
-    -fx-border-width: 1px; /* Border width for focused item */
-}
-
-/* Apply custom styles to the hover effect */
-.list-view .list-cell:hover {
-    -fx-background-color: #e0e0e0; /* Background color for hover effect */
-}
-
-
-/* Style for ListView */
-#listView {
-    -fx-background-color: #9e2222; /* Set the background color */
-    -fx-border-color: #0bcc1b; /* Set the border color */
-}
-
-#listView .list-cell {
-    -fx-padding: 10px; /* Set padding for list cells */
-}
-
-#listView .list-cell:hover {
-    -fx-background-color: #dae90a; /* Change background color on hover */
-}
-
-
 
