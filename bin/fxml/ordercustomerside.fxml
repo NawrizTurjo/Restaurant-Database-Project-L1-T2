@@ -20,7 +20,7 @@
             <Image url="@../assets/bill2.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="payLabel" alignment="BOTTOM_LEFT" layoutX="739.0" layoutY="66.0" prefHeight="369.0" prefWidth="365.0" text="Label">
+      <Label fx:id="payLabel" alignment="BOTTOM_LEFT" layoutX="739.0" layoutY="66.0" prefHeight="369.0" prefWidth="365.0" text="Label" wrapText="true">
          <font>
             <Font name="Lucida Console" size="30.0" />
          </font>

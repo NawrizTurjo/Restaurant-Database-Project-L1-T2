@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,6 +34,13 @@
          <font>
             <Font size="32.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.970370352268219" green="0.5555555820465088" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
       <TextField fx:id="nameText" alignment="CENTER" layoutX="221.0" layoutY="313.0" prefHeight="39.0" prefWidth="413.0" promptText="Enter your desire" styleClass="text-field" visible="false">
          <font>
@@ -70,6 +78,13 @@
                </stops>
             </RadialGradient>
          </textFill>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.970370352268219" green="0.5555555820465088" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
       <Button fx:id="orderButton" layoutX="489.0" layoutY="498.0" mnemonicParsing="false" onAction="#order" prefHeight="30.0" prefWidth="145.0" text="Order Now" />
       <Button fx:id="historyButton" layoutX="220.0" layoutY="498.0" mnemonicParsing="false" onAction="#history" text="VIew Order History" />

@@ -6,14 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Server",
-            "request": "launch",
-            "mainClass": "network.Server",
-            "projectName": "Restaurant-database-main-package-main_92c2da51",
-            "vmArgs": "--module-path G:\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib --add-modules javafx.controls,javafx.fxml"
-        },
-        {
-            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -23,32 +15,36 @@
             "name": "ClientCustomer",
             "request": "launch",
             "mainClass": "app.ClientCustomer",
-            "projectName": "Restaurant-database-main-package-main_92c2da51",
-            "vmArgs": "--module-path G:\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
+        
         },
         {
             "type": "java",
             "name": "ClientRestaurant",
             "request": "launch",
             "mainClass": "app.ClientRestaurant",
-            "projectName": "Restaurant-database-main-package-main_92c2da51",
-            "vmArgs": "--module-path G:\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib --add-modules javafx.controls,javafx.fxml"
-        },
-        {
-            "type": "java",
-            "name": "RestaurantApp",
-            "request": "launch",
-            "mainClass": "app.RestaurantApp",
-            "projectName": "Restaurant-database-main-package-main_92c2da51",
-            "vmArgs": "--module-path G:\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
+        
         },
         {
             "type": "java",
             "name": "Server",
             "request": "launch",
-            "mainClass": "app.Server",
-            "projectName": "Restaurant-database-main-package-main_92c2da51",
-            "vmArgs": "--module-path G:\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+            "mainClass": "network.Server",
+            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
+        
+        },
+        {
+            "type": "java",
+            "name": "RestaurantApp",
+            "request": "launch",
+            "mainClass": "resources.RestaurantApp",
+            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
+        
         }
     ]
 }

@@ -58,7 +58,121 @@ public class HomeScreenController implements Initializable {
 
     @FXML
     void order(ActionEvent event) throws IOException {
-        displayOrderPage();
+        String selectedRestaurant = restaurantList.getSelectionModel().getSelectedItem();
+        String selectedFood = foodList.getSelectionModel().getSelectedItem();
+
+        List<Restaurant> restaurants = new ArrayList<>();
+        List<Food> foods = new ArrayList<>();
+
+        if (selectedRestaurant != null) {
+            switch (selectedRestaurant) {
+                case "By Name":
+                    restaurants = ClientCustomer.restaurantManager.searchRestaurantByName(nameText.getText());
+                    for (Restaurant i : restaurants) {
+                        for (Food j : i.getMenu()) {
+                            foods.add(j);
+                        }
+                    }
+                    displayOrderPage(foods);
+                    break;
+                case "By Score":
+                    if (!nameText.getText().isEmpty() && !secondaryText.getText().isEmpty()) {
+                        restaurants = ClientCustomer.restaurantManager.searchRestaurantByScore(
+                                Double.parseDouble(nameText.getText()),
+                                Double.parseDouble(secondaryText.getText()));
+                        for (Restaurant i : restaurants) {
+                            for (Food j : i.getMenu()) {
+                                foods.add(j);
+                            }
+                        }
+                        displayOrderPage(foods);
+                    } else {
+                        showAlert("Restaurant Search", "Please enter both lower and upper score.");
+                    }
+                    break;
+                case "By Category":
+                    restaurants = ClientCustomer.restaurantManager.searchRestaurantByCategory(nameText.getText());
+                    for (Restaurant i : restaurants) {
+                        for (Food j : i.getMenu()) {
+                            foods.add(j);
+                        }
+                    }
+                    displayOrderPage(foods);
+                    break;
+                case "By Price":
+                    restaurants = ClientCustomer.restaurantManager.searchRestaurantByPrice(nameText.getText());
+                    for (Restaurant i : restaurants) {
+                        for (Food j : i.getMenu()) {
+                            foods.add(j);
+                        }
+                    }
+                    displayOrderPage(foods);
+                    break;
+                case "By Zip Code":
+                    restaurants = ClientCustomer.restaurantManager.searchRestaurantByZip(nameText.getText());
+                    for (Restaurant i : restaurants) {
+                        for (Food j : i.getMenu()) {
+                            foods.add(j);
+                        }
+                    }
+                    displayOrderPage(foods);
+                    break;
+                default:
+                    showAlert("Restaurant Search", "Invalid selection.");
+                    break;
+            }
+        } else if (selectedFood != null) {
+            switch (selectedFood) {
+                case "By Name":
+                    foods = ClientCustomer.restaurantManager.searchFoodByName(nameText.getText());
+                    displayOrderPage(foods);
+                    break;
+                case "By Name in a given restaurant":
+                    foods = ClientCustomer.restaurantManager.searchFoodByNameOfRestaurant(nameText.getText(),
+                            secondaryText.getText());
+                    displayOrderPage(foods);
+                    break;
+                case "By Category":
+                    foods = ClientCustomer.restaurantManager.searchFoodByCategory(nameText.getText());
+                    displayOrderPage(foods);
+                    break;
+                case "By Category in a given restaurant":
+                    foods = ClientCustomer.restaurantManager.searchFoodByCategoryOfRestaurant(nameText.getText(),
+                            secondaryText.getText());
+                    displayOrderPage(foods);
+                    break;
+                case "By Price Range":
+                    if (!nameText.getText().isEmpty()) {
+                        String line[] = nameText.getText().split(" ");
+                        foods = ClientCustomer.restaurantManager.searchFoodByPrice(Double.parseDouble(line[0]),
+                                Double.parseDouble(line[1]));
+                        displayOrderPage(foods);
+                    } else {
+                        showAlert("Food Search", "Please enter price range.");
+                    }
+                    break;
+                case "By Price Range in a Given Restaurant":
+                    if (!nameText.getText().isEmpty()) {
+                        String lines[] = nameText.getText().split(" ");
+                        foods = ClientCustomer.restaurantManager.searchFoodByPriceOfRestaurant(
+                                Double.parseDouble(lines[0]),
+                                Double.parseDouble(lines[1]), secondaryText.getText());
+                        displayOrderPage(foods);
+                    } else {
+                        showAlert("Food Search", "Please enter price range.");
+                    }
+                    break;
+                case "Costliest Food Item(s) on the Menu in a Given Restaurant":
+                    foods = ClientCustomer.restaurantManager.costliestFoodOfReataurant(nameText.getText());
+                    displayOrderPage(foods);
+                    break;
+                default:
+                    showAlert("Food Search", "Invalid selection.");
+                    break;
+            }
+        } else {
+            showAlert("Search", "Please select a search option.");
+        }
     }
 
     @FXML
@@ -209,11 +323,11 @@ public class HomeScreenController implements Initializable {
         stage.show();
     }
 
-    private void displayOrderPage() throws IOException {
+    private void displayOrderPage(List<Food> foods) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/orderfood.fxml"));
         Parent root = loader.load();
         OrderFoodController controller = loader.getController();
-        controller.setFoodItems(ClientCustomer.restaurantManager.getFoods());
+        controller.setFoodItems(foods);
 
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
