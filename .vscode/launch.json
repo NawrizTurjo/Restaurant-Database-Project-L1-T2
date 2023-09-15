@@ -15,36 +15,32 @@
             "name": "ClientCustomer",
             "request": "launch",
             "mainClass": "app.ClientCustomer",
-            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "projectName": "Restaurant-Database-Project-L1-T2_6cdbc457",
             "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
-        
         },
         {
             "type": "java",
             "name": "ClientRestaurant",
             "request": "launch",
             "mainClass": "app.ClientRestaurant",
-            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "projectName": "Restaurant-Database-Project-L1-T2_6cdbc457",
             "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
-        
         },
         {
             "type": "java",
             "name": "Server",
             "request": "launch",
             "mainClass": "network.Server",
-            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "projectName": "Restaurant-Database-Project-L1-T2_6cdbc457",
             "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
-        
         },
         {
             "type": "java",
             "name": "RestaurantApp",
             "request": "launch",
             "mainClass": "resources.RestaurantApp",
-            "projectName": "Restaurant-database-main-package-main_5faa0439",
+            "projectName": "Restaurant-Database-Project-L1-T2_6cdbc457",
             "vmArgs": "--module-path E:\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml"
-        
         }
     ]
 }
