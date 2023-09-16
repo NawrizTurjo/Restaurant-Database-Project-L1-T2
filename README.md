@@ -69,8 +69,14 @@ To run this enchanting program:
 
 **Option 1: Command Line (Part 1)**
 1. Ensure you have the `Java Development Kit (JDK)` installed.
-2. Compile the program: `javac RestaurantApp.java`
-3. Start the magic: `java RestaurantApp`
+2. Compile the program:
+   ```
+   javac RestaurantApp.java
+   ```
+6. Start the magic:
+   ```
+   java RestaurantApp
+   ```
 
 **Option 2: JavaFX GUI & Networking (Part 2)**
 1. Make sure you have `JavaFX` installed or included in your project.
