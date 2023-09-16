@@ -171,4 +171,6 @@ To run the client from two different PCs and connect to the server, follow these
 Please note that network configurations may vary based on your specific setup and operating system. Ensure that your server PC and client PCs are on the same local network for this setup to work. If you encounter connection issues, consider checking your firewall settings and network configuration.
 
 
-## Happy Dining!
+<div align="center">
+  <h1> Happy Dining! </h1>
+</div>
