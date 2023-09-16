@@ -73,15 +73,15 @@ To run this enchanting program:
    ```
    javac RestaurantApp.java
    ```
-6. Start the magic:
+3. Start the magic:
    ```
    java RestaurantApp
    ```
 
 **Option 2: JavaFX GUI & Networking (Part 2)**
 1. Make sure you have `JavaFX` installed or included in your project.
-2. Update launch.json: Open the project in `vscode` and update the `launch.json` by updating the `vmArgs` location to your `javafx-lib` folder
-3. Compile the program: `run the server first, then both clients (It is desirable to login as all restaurants to enjoy full features)`
+2. Update launch.json: Open the project in `vscode` and update the `launch.json` by updating the `vmArgs` location to your `javafx-lib` folder, also make sure to add referenced library of your `javafx-lib` files
+3. Start the program: `run the server first, then both clients (It is desirable to login as all restaurants to enjoy full features)`
 4. Start the enchantment: `enjoy`
 
 ## 🌮 Main Menu Magic
