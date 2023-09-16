@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="restaurant-logo.jpg" alt="Restaurant Database System Logo" width="200">
+  <img src="src/assets/Restaurant Table.jpg" alt="Restaurant Database System Logo" width="200">
   <h1>CSE 108: Java Term Project</h1>
   <h2>Restaurant Database System</h2>
 </div>
@@ -10,9 +10,46 @@ Welcome to the **Restaurant Database System** project! This server-based applica
 
 ## Screenshots
 
-## Screenshots
+![Restaurant Page](screenshots/12.png)
+![Restaurant Page](screenshots/13.png)
+*Screenshot of the restaurant owner's dashboard.*
 
-Click [here](screenshot-list.html) to view the list of screenshots.
+![Restaurant Page](screenshots/22.png)
+*Unique logo for each restaurant in database.*
+
+![Customer Page](screenshots/1.png)
+![Customer Page](screenshots/2.png)
+*Screenshot of customer's login page*
+
+![Customer Page](screenshots/3.png)
+![Customer Page](screenshots/4.png)
+![Customer Page](screenshots/8.png)
+*Screenshot of the customer's interface for searching food.*
+
+![Customer Page](screenshots/5.png)
+*Confirmation for safe logout*
+
+![Customer Page](screenshots/10.png)
+![Customer Page](screenshots/11.png)
+*Screenshot of the customer's interface for ordering food.*
+
+![Customer Page](screenshots/14.png)
+![Customer Page](screenshots/15.png)
+*place of order*
+
+![Customer Page](screenshots/16.png)
+![Customer Page](screenshots/17.png)
+*order confirmation*
+
+![Customer Page](screenshots/21.png)
+![Customer Page](screenshots/22.png)
+*place order at multiple restaurant simuntaneously*
+
+![Customer Page](screenshots/24.png)
+*multiple user mode*
+
+![Customer Page](screenshots/7.png)
+*CSS Styling*
 
 ## Features
 
@@ -31,14 +68,21 @@ Click [here](screenshot-list.html) to view the list of screenshots.
 To run this enchanting program:
 
 **Option 1: Command Line (Part 1)**
-1. Ensure you have the Java Development Kit (JDK) installed.
-2. Compile the program: `javac RestaurantApp.java`
-3. Start the magic: `java RestaurantApp`
+1. Ensure you have the `Java Development Kit (JDK)` installed.
+2. Compile the program:
+   ```
+   javac RestaurantApp.java
+   ```
+6. Start the magic:
+   ```
+   java RestaurantApp
+   ```
 
 **Option 2: JavaFX GUI & Networking (Part 2)**
-1. Make sure you have JavaFX installed or included in your project.
-2. Compile the program: `javac RestaurantApp.java`
-3. Start the enchantment: `java RestaurantApp`
+1. Make sure you have `JavaFX` installed or included in your project.
+2. Update launch.json: Open the project in `vscode` and update the `launch.json` by updating the `vmArgs` location to your `javafx-lib` folder
+3. Compile the program: `run the server first, then both clients (It is desirable to login as all restaurants to enjoy full features)`
+4. Start the enchantment: `enjoy`
 
 ## 🌮 Main Menu Magic
 
@@ -56,21 +100,19 @@ Main Menu (Part 2):
 
 1. Search Restaurants
 2. Search Food Items
-3. Add Restaurant
-4. Add Food Item to the Menu
-5. Network Mode
-6. Exit System
+3. Network Mode
+4. Exit System
 
 ## 🌐 Network Mode (Part 2)
 
 Embark on a new journey with the Network Mode:
 
 - **Restaurant Mode:** Log in as a restaurant owner, receive orders from customers, and confirm them in real-time.
-- **Customer Mode:** Log in by name, search for food, filter results, place orders, and receive real-time updates on order status.
+- **Customer Mode:** Log in by name, search for food, filter results, place orders, and receive real-time updates on order status, find out how much you have spent.
 
 ## 📦 Input Files
 
-Load the magic of your data from `restaurant.txt` and `menu.txt`. Both files use a comma-separated format; Also restaurant passwords are safe within `restaurantPass.txt` file.
+Load the magic of your data from `restaurant.txt` and `menu.txt`. Both files use a comma-separated format; also restaurant passwords are safe within `restaurantPass.txt` file.
 
 ## 🎩 Assumptions and Enchantments
 
@@ -93,13 +135,6 @@ The mystical price symbols indicate cost per person for an average meal.
 
 Explore the enchanted world of restaurants and food items with the enhanced **Restaurant Database System**. Let the magic unfold with a beautiful GUI and real-time networking features!
 
-## Screenshots
-
-![Restaurant Page](screenshots/restaurant_page.png)
-*Screenshot of the restaurant owner's dashboard.*
-
-![Customer Page](screenshots/customer_page.png)
-*Screenshot of the customer's interface for ordering food.*
 ## 🌐 Network Configuration (Running Client from Multiple PCs)
 
 To run the client from two different PCs and connect to the server, follow these steps:
@@ -120,14 +155,14 @@ To run the client from two different PCs and connect to the server, follow these
    - Run the server application on the server PC. Make sure it's listening for incoming connections.
 
 **Client PC Configuration:**
-1. Install Java:
-   - Ensure that you have Java installed on your client PC.
+1. Install Java and Javafx:
+   - Ensure that you have `Java` along with `Javafx` installed on your client PC.
 
 2. Update Configuration:
-   - In the client application code or configuration, specify the server PC's IP address obtained earlier. You may need to modify a configuration file or provide the IP address as a command-line argument.
+   - In the client application code or configuration, specify the server PC's `IP address` obtained earlier. You may change the server address in `connectToServer` method for client application.
 
 3. Run the Client Application:
-   - Start the client application on your client PC.
+   - Start the `client` application on your client PC.
    - You should now be able to connect to the server PC using its IP address.
 
 **Connecting from Multiple PCs:**
@@ -136,4 +171,6 @@ To run the client from two different PCs and connect to the server, follow these
 Please note that network configurations may vary based on your specific setup and operating system. Ensure that your server PC and client PCs are on the same local network for this setup to work. If you encounter connection issues, consider checking your firewall settings and network configuration.
 
 
-Happy Dining!
+<div align="center">
+  <h1> Happy Dining! </h1>
+</div>
