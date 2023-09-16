@@ -113,7 +113,7 @@ Embark on a new journey with the Network Mode:
 
 ## 📦 Input Files
 
-Load the magic of your data from `restaurant.txt` and `menu.txt`. Both files use a comma-separated format.
+Load the magic of your data from `restaurant.txt` and `menu.txt`. Both files use a comma-separated format; Also restaurant passwords are safe within `restaurantPass.txt` file.
 
 ## 🎩 Assumptions and Enchantments
 
