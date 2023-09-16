@@ -10,52 +10,9 @@ Welcome to the **Restaurant Database System** project! This server-based applica
 
 ## Screenshots
 
-<!-- Add the following HTML and JavaScript code to automatically list images from the 'screenshots' folder -->
+## Screenshots
 
-<div>
-  <p>Click on the images to view larger versions:</p>
-  <ul id="screenshot-list">
-    <!-- The script below will populate this list -->
-  </ul>
-</div>
-
-<script>
-  // JavaScript code to generate a list of images from the 'screenshots' folder
-  const screenshotList = document.getElementById('screenshot-list');
-
-  // Replace 'screenshots/' with the actual path to your folder
-  const screenshotPath = 'screenshots/';
-
-  // List of allowed image file extensions
-  const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif'];
-
-  // Function to check if a file has an allowed image extension
-  function isImageFile(filename) {
-    const ext = filename.slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2);
-    return imageExtensions.includes('.' + ext.toLowerCase());
-  }
-
-  // Function to generate the HTML for each image
-  function createImageElement(filename) {
-    return `<li><a href="${screenshotPath}${filename}" target="_blank"><img src="${screenshotPath}${filename}" alt="${filename}" width="200"></a></li>`;
-  }
-
-  // Fetch the list of files in the 'screenshots' folder and generate the list
-  fetch(screenshotPath)
-    .then((response) => response.text())
-    .then((text) => {
-      const parser = new DOMParser();
-      const htmlDoc = parser.parseFromString(text, 'text/html');
-      const files = Array.from(htmlDoc.links).map((link) => link.href);
-      const imageFiles = files.filter(isImageFile);
-      const imageListHTML = imageFiles.map(createImageElement).join('');
-      screenshotList.innerHTML = imageListHTML;
-    })
-    .catch((error) => {
-      console.error('Error fetching screenshot files:', error);
-    });
-</script>
-
+Click [here](screenshot-list.html) to view the list of screenshots.
 
 ## Features
 
