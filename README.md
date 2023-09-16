@@ -159,7 +159,7 @@ To run the client from two different PCs and connect to the server, follow these
    - Ensure that you have `Java` along with `Javafx` installed on your client PC.
 
 2. Update Configuration:
-   - In the client application code or configuration, specify the server PC's `IP address` obtained earlier. You may change the code in `connectToServer` method for client application.
+   - In the client application code or configuration, specify the server PC's `IP address` obtained earlier. You may change the server address in `connectToServer` method for client application.
 
 3. Run the Client Application:
    - Start the `client` application on your client PC.
